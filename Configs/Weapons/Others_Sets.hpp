@@ -1,0 +1,19 @@
+class CM_Shot_SoundSet
+{
+	soundshaders[]=
+	{
+		"CM_shot_Int_soundshader",
+		"CM_shot_Ext_soundshader",
+		"CM_shot_Dis_Ext_soundshader"
+	};
+	volumeFactor=1;
+	volumecurve="VFX_wpn_vl_sin";
+	frequencyrandomizer=1.25;
+	sound3dprocessingtype="VFX_weapons_tails_3dprocessor";
+	distancefilter="VFX_wpn_echo_lp_dia";
+	occlusionFactor=0.3;
+	obstructionFactor=0;
+	spatial=1;
+	doppler=0;
+	loop=0;
+};

@@ -1,0 +1,67 @@
+class Gau8_Fire_Lo_Int_SoundSet
+{
+	distanceFilter="A10_HeavyGAU_Int_Shot_filter";
+	doppler=0;
+	loop=0;
+	obstructionFactor=0.3;
+	occlusionFactor=0.5;
+	sound3DProcessingType="A10_HeavyGAU_Int_Shot_3DProcessor";
+	soundShaders[]=
+	{
+		"Gau8_Fire_Lo_Int"
+	};
+	spatial=0;
+	volumeCurve="InverseSquare2Curve";
+	volumeFactor=2;
+};
+class Gau8_Fire_Hi_Int_SoundSet
+{
+	distanceFilter="A10_HeavyGAU_Int_Shot_filter";
+	doppler=0;
+	loop=0;
+	obstructionFactor=0.3;
+	occlusionFactor=0.5;
+	sound3DProcessingType="A10_HeavyGAU_Int_Shot_3DProcessor";
+	soundShaders[]=
+	{
+		"Gau8_Fire_Hi_Int"
+	};
+	spatial=0;
+	volumeCurve="InverseSquare2Curve";
+	volumeFactor=2;
+};
+class Gau8_Fire_Base_SoundSet
+{
+	distanceFilter="A10_HeavyGAU_distance_filter";
+	doppler=1;
+	loop=0;
+	obstructionFactor=0.3;
+	occlusionFactor=0.5;
+	sound3DProcessingType="A10_HeavyGAU_WeaponShotEcho_3DProcessor";
+	spatial=1;
+	volumeCurve="InverseSquare2Curve";
+	volumeFactor=1;
+};
+class Gau8_Fire_Lo_SoundSet: Gau8_Fire_Base_SoundSet
+{
+	soundShaders[]=
+	{
+		"Gau8_Fire_Near",
+		"Gau8_Fire_Close",
+		"Gau8_Fire_Mid",
+		"Gau8_Fire_far"
+	};
+	frequencyRandomizer=0.8;
+	frequencyRandomizerMin=0.5;
+};
+class Gau8_Fire_Hi_SoundSet: Gau8_Fire_Base_SoundSet
+{
+	soundShaders[]=
+	{
+		"Gau8_Fire_Hi_Near",
+		"Gau8_Fire_Hi_Mid",
+		"Gau8_Fire_Hi_Far"
+	};
+	frequencyRandomizer=0.6;
+	frequencyRandomizerMin=0.3;
+};
