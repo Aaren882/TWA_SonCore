@@ -3,48 +3,69 @@ class CfgSoundShapes
 {
 	class JetFX_RearSide_shape
 	{
-		type = "cone";
-		innerVolume = 1.0;
-		outerVolume = 0.2;
-		innerAngle = 135;
-		outerAngle = 300;
-		azimuth = 180;
-		elevation = 0;
+		type="cone";
+		innerVolume=1.0;
+		outerVolume=0.2;
+		innerAngle=135;
+		outerAngle=300;
+		azimuth=180;
+		elevation=0;
 	};
 	class JetFX_RearSideClose_shape: JetFX_RearSide_shape
 	{
-		innerAngle = 140;
-		outerAngle = 250;
-		outerVolume = 0.15;
+		innerAngle=140;
+		outerAngle=250;
+		outerVolume=0.15;
 	};
 	class JetFX_FlyBy_shape
 	{
-		type = "cone";
-		innerVolume = 1.0;
-		outerVolume = 0.01;
-		innerAngle = 150;
-		outerAngle = 210;
-		azimuth = 0;
-		elevation = 0;
+		type="cone";
+		innerVolume=1.0;
+		outerVolume=0.01;
+		innerAngle=150;
+		outerAngle=210;
+		azimuth=0;
+		elevation=0;
 	};
 	class JetFX_Front_shape
 	{
-		type = "cone";
-		innerVolume = 1.0;
-		outerVolume = 0.1;
-		innerAngle = 150;
-		outerAngle = 300;
-		azimuth = 0;
-		elevation = 0;
+		type="cone";
+		innerVolume=1.0;
+		outerVolume=0.1;
+		innerAngle=150;
+		outerAngle=300;
+		azimuth=0;
+		elevation=0;
 	};
 	class JetFX_Slow_Front_shape: JetFX_Front_shape
 	{
-		outerVolume = 0.3;
+		outerVolume=0.3;
+	};
+	
+	//Helis
+	class HeliFX_Turbine_Shape: JetFX_RearSide_shape
+	{
+		outervolume=0.4;
+		innerangle=130;
+		outerangle=210;
+	};
+	class HeliFX_Front_Shape: JetFX_Front_shape
+	{
+		outervolume=0.4;
+		innerangle=150;
+		outerangle=230;
+	};
+	class HeliFX_TailRotor_Shape: HeliFX_Turbine_Shape
+	{
+		outervolume=0.5;
+		innerangle=70;
+		outerangle=120;
 	};
 };
 //-SoundCurves
 class CfgSoundCurves
 {
+	//Jets
 	class JetFX_EngineLow_Base_Curve
 	{
 		points[]=
@@ -58,7 +79,7 @@ class CfgSoundCurves
 	};
 	class JetFX_EngineExt_Intense_Base_Curve
 	{
-		points[] = 
+		points[]=
 		{
 			{0.0,0.4},
 			{0.8,1.0},
@@ -67,7 +88,7 @@ class CfgSoundCurves
 	};
 	class JetFX_EngineExt_Base_Curve
 	{
-		points[] = 
+		points[]=
 		{
 			{0.0,1.0},
 			{0.4,0.9},
@@ -76,10 +97,24 @@ class CfgSoundCurves
 		};
 	};
 	
+	//Helis
+	class HeliFX_Ext_Base_Curve
+	{
+		points[]=
+		{
+			{0.0,1.0},
+			{0.4,0.6},
+			{0.6,0.4},
+			{0.8,0.2},
+			{0.9,0.1},
+			{1.0,0.0}
+		};
+	};
+
 	//Sonic Boom
 	class JetFX_SonicBoom_Curve
 	{
-		points[] = 
+		points[]=
 		{
 			{0.0,1.0},
 			{0.4,0.9},
@@ -157,28 +192,47 @@ class CfgSound3DProcessors
 	//Sonic Boom
 	class JetFX_SonicBoom_3DProcessingType
 	{
-		type = "emitter";
-		innerRange = 5000;
-		range = 5000;
-		rangeCurve = "Smooth1Curve";
+		type="emitter";
+		innerRange=5000;
+		range=5000;
+		rangeCurve="Smooth1Curve";
 	};
 	
 	//Jet Engine
 	class JetFX_Close_3DProcessingType
 	{
-		type = "panner";
-		innerRange = 1200;
-		range = 4000;
-		rangeCurve = "Smooth1Curve";
+		type="panner";
+		innerRange=1200;
+		range=4000;
+		rangeCurve="Smooth1Curve";
 	};
 	class JetFX_Distant_3DProcessingType: JetFX_Close_3DProcessingType
 	{
-		innerRange = 3000;
+		innerRange=3000;
 	};
 	class JetFX_Forsage_Close_3DProcessingType: JetFX_Close_3DProcessingType
 	{
-		innerRange = 0;
-		range = 1000;
+		innerRange=0;
+		range=1000;
+	};
+	
+	//Heli
+	class HeliFX_Close_3DProcessor: JetFX_Close_3DProcessingType
+	{
+		innerRange=0;
+		range=800;
+	};
+	
+	class HeliFX_Distant_3DProcessor: HeliFX_Close_3DProcessor
+	{
+		innerrange = 2000;
+		range = 3000;
+	};
+	class HeliFX_TailRotor_3DProcessor: HeliFX_Close_3DProcessor
+	{
+		innerrange = 1;
+		range = 5;
+		rangecurve="LinearCurve";
 	};
 	
 	//Gatling Gun
@@ -299,6 +353,24 @@ class cfgDistanceFilters
 		mincutofffrequency=1200;
 		qfactor=0.5;
 		innerrange=0;
+	};
+	
+	// -Helicopter
+	class HeliFX_Close_Engine_Filter
+	{
+		type="lowpassfilter";
+		mincutofffrequency=100;
+		qfactor=1.0;
+		innerrange=0;
+		range=1200;
+		powerfactor=10;
+	};
+	class HeliFX_Distant_Engine_Filter: HeliFX_Close_Engine_Filter
+	{
+		mincutofffrequency=200;
+		innerrange=1000;
+		range=4000;
+		powerfactor=18;
 	};
 	
 	//Gatling Gun

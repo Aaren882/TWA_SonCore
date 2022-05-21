@@ -516,3 +516,5 @@ class JetFX_Whine_EngineIntTR_SoundShader_Base: JetFX_Whine_EngineInt_SoundShade
 };
 ////////////////////Vehicles///////////////////////////
 #include "Vehicles\CAS_01_Shaders.hpp"
+#include "Vehicles\Helis_Base_Shaders.hpp"
+#include "Vehicles\Heli_01_Shaders.hpp"

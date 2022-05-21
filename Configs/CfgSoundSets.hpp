@@ -287,6 +287,8 @@ class JetFX_Whine_EngineIntTR_SoundSet_Base: JetFX_Whine_EngineInt_SoundSet_Base
 };
 ////////////////////Vehicles///////////////////////////
 #include "Vehicles\CAS_01_Sets.hpp"
+#include "Vehicles\Helis_Base_Sets.hpp"
+#include "Vehicles\Heli_01_Sets.hpp"
 
 //Sonic Boom
 class Plane_Fighter_SonicBoom_SoundSet
