@@ -1,4 +1,4 @@
-params ["_logic","_units","_activated"];
+params ["_logic","_units","_activated","_trigger_range"];
 
 _Set_PitchBank = {
 	if !(_casType == 3) then {
@@ -13,7 +13,7 @@ _Set_PitchBank = {
 missionnamespace setvariable ["RscATtributeCAS_TWA_selected",""];
 if (_activated) then {
 	//Basic Definition
-	_casType = _logic getvariable ["type",getnumber (configfile >> "cfgvehicles" >> typeof _logic >> "Zeus_CAStype")];
+	_casType = _logic getvariable "type";
 
 	_dis = 4000;
 	_alt = if (_casType == 3) then {500} else {2000};
@@ -41,7 +41,7 @@ if (_activated) then {
 		case 0: {["machinegun","CannonCore"]};
 		case 1: {["machinegun","CannonCore"]};
 		case 2: {["RocketPods"]};
-		case 3: {["bomblauncher","weapon_lgblauncherbase","mk82bomblauncher"]};
+		case 3: {["bomblauncher","weapon_lgblauncherbase","mk82bomblauncher","USAF_BombLauncherBase"]};
 		default {[]};
 	};
 	_cfgweapon_path = configFile >> "CfgWeapons";
@@ -53,7 +53,13 @@ if (_activated) then {
 					//Bomb
 					_condition = if (_casType == 2) then
 					{
-						(_weapon_info isKindOf [_type, _cfgweapon_path]) and !((_weapon_info isKindOf ["weapon_lgblauncherbase", _cfgweapon_path]) or (_weapon_info isKindOf ["Mk82BombLauncher", _cfgweapon_path]))
+						(_weapon_info isKindOf [_type, _cfgweapon_path]) and
+						!(
+							(_weapon_info isKindOf ["USAF_BombLauncherBase", _cfgweapon_path]) or
+							(_weapon_info isKindOf ["weapon_lgblauncherbase", _cfgweapon_path]) or
+						 	(_weapon_info isKindOf ["Missile_AA_04_Plane_CAS_01_F", _cfgweapon_path]) or
+							(_weapon_info isKindOf ["Mk82BombLauncher", _cfgweapon_path])
+						)
 					} else {
 						(_weapon_info isKindOf [_type, _cfgweapon_path])
 					};
@@ -136,7 +142,7 @@ if (_activated) then {
 		missionnamespace setvariable ["TWAF_fnc_CAS_Dir",direction _logic];
 
 		//Set the plane approach vector
-		_awayDis = 2000;
+		_awayDis = _trigger_range;
 		call _Set_PitchBank;
 
 		//Delete Vehicle

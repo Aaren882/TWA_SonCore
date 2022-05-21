@@ -18,13 +18,14 @@ switch _mode do {
 		_ctrlValue ctrlsetfontheight GUI_GRID_H;
 
 		_selected = missionnamespace getvariable ["RscATtributeCAS_TWA_selected",""];
-		_weaponTypesID = _unit getvariable ["type",getnumber (configfile >> "cfgvehicles" >> typeof _unit >> "Zeus_CAStype")];
+		_unit setvariable ["type",getnumber (configfile >> "cfgvehicles" >> typeof _unit >> "Zeus_CAStype")];
+		_weaponTypesID = _unit getvariable "type";
 
 		if (isNil "CAS_PlaneInfoCache") then
 		{
 			CAS_PlaneInfoCache = [[],[],[],[]];
 			_Children = (configfile >> "cfgvehicles") call bis_fnc_returnchildren;
-			_weapon_types_list = [["machinegun","cannon"], ["machinegun","cannon"], ["launcher","rocketlauncher","USAF_FFARLauncher_unguided"], ["bomblauncher","weapon_LGBLauncherBase"]];
+			_weapon_types_list = [["machinegun","cannon"], ["machinegun","cannon"], ["rocketlauncher","USAF_FFARLauncher_unguided"], ["bomblauncher","weapon_LGBLauncherBase"]];
 
 			{
 				//--- Show planes
@@ -35,9 +36,10 @@ switch _mode do {
 						!(_vehicle isKindOf "VTOL_Base_F") and
 						!(_vehicle isKindOf "UAV") and
 						(_vehicle isKindOf "Plane") and
+						(_vehicle != "I_Plane_Fighter_03_CAS_F") and
 						((getNumber (_planeCfg >> "scope") == 2) or (getNumber (_planeCfg >> "scopeCurator") == 2))
 					) then {
-						
+
 					_cfg = configfile >> "cfgvehicles" >> _vehicle;
 
 					_weapon_classes = getarray (_planeCfg >> "weapons");
@@ -58,6 +60,7 @@ switch _mode do {
 							_modes = getarray (configfile >> "cfgweapons" >> _x >> "modes");
 							if (count _modes > 0) then
 							{
+
 								_mode = _modes select 0;
 								if (_mode == "this") then {_mode = _x;};
 								_weapons pushBack [_x,_mode];
@@ -101,6 +104,7 @@ switch _mode do {
 		};
 		missionNamespace setVariable ["TWAF_weapon_types_list",CAS_PlaneInfoCache];
 		_cas_info_list = CAS_PlaneInfoCache # _weaponTypesID;
+		_cfgweapon_path = configFile >> "CfgWeapons";
 
 		if (_weaponTypesID < 2) then {
 			{
@@ -122,8 +126,31 @@ switch _mode do {
 				_planeClass = _x # 0;
 				_planeCfg = (configfile >> "cfgvehicles" >> _planeClass);
 				_weapons_info = _x # 1;
-				_weapon_info = _weapons_info # 0;
-				call _call_Display;
+
+				_weapons_Num = {
+					((_x # 0) isKindOf ["bomblauncher",_cfgweapon_path]) or
+					((_x # 0) isKindOf ["weapon_LGBLauncherBase",_cfgweapon_path]) or
+					((_x # 0) isKindOf ["Mk82BombLauncher",_cfgweapon_path]) or
+					((_x # 0) isKindOf ["USAF_BombLauncherBase",_cfgweapon_path])
+				} count _weapons_info;
+
+				if (_weaponTypesID == 2) then {
+					_weapons_Num = {
+						((_x # 0) isKindOf ["RocketPods",_cfgweapon_path]) and
+						!(
+							((_x # 0) isKindOf ["weapon_AGM_65Launcher",_cfgweapon_path]) or
+							((_x # 0) isKindOf ["USAF_BombLauncherBase",_cfgweapon_path]) or
+							((_x # 0) isKindOf ["Mk82BombLauncher",_cfgweapon_path]) or
+							((_x # 0) isKindOf ["Missile_AA_04_Plane_CAS_01_F",_cfgweapon_path]) or
+							((_x # 0) isKindOf ["weapon_LGBLauncherBase",_cfgweapon_path])
+						)
+					} count _weapons_info;
+				};
+
+				if (_weapons_Num > 0) then {
+					call _call_Display;
+				};
+
 			} foreach _cas_info_list;
 		};
 
@@ -144,7 +171,7 @@ switch _mode do {
 		_unit setvariable ["vehicle",_vehicle,true];
 		_unit setvariable ["BIS_fnc_curatorAttributes",[],true];
 		missionnamespace setvariable ["RscATtributeCAS_TWA_selected",_vehicle];
-    [_unit,(missionnamespace getvariable "RscATtributeCAS_TWA_selected"),true] spawn TWAF_fnc_CAS;
+    [_unit,(missionnamespace getvariable "RscATtributeCAS_TWA_selected"),true,(missionnamespace getvariable ["RscATtributeCAS_TWA_Attack_Range",2000])] spawn TWAF_fnc_CAS;
 	};
 	case "onUnload": {
 		if (!isnil "RscAttributePostProcess_default") then {
