@@ -1,0 +1,80 @@
+class 130_25mm_Shot25_Int_SoundSet
+{
+	soundshaders[]=
+	{
+		"130_25mm_Shot25_SoundShader"
+	};
+	volumeFactor=2;
+	volumeCurve="InverseSquare2Curve";
+	spatial=0;
+	doppler=0;
+	loop=0;
+	distancefilter="GunShip_Int_Shot_filter";
+	sound3DProcessingType="GunShip_Int_Shot_3DProcessor";
+	occlusionfactor=0.25;
+	obstructionfactor=0.25;
+	frequencyrandomizer=1.175;
+};
+class 130_25mm_Shot50_Int_SoundSet: 130_25mm_Shot25_Int_SoundSet
+{
+	soundshaders[]=
+	{
+		"130_25mm_Shot50_SoundShader"
+	};
+};
+class 130_25mm_Shot100_Int_SoundSet: 130_25mm_Shot25_Int_SoundSet
+{
+	soundshaders[]=
+	{
+		"130_25mm_Shot100_SoundShader"
+	};
+};
+class 130_25mm_Shot25_SoundSet: 130_25mm_Shot25_Int_SoundSet
+{
+	soundShaders[]=
+	{
+		"130_25mm_Shot25_150m_SoundShader",
+		"130_25mm_Shot_550m_SoundShader",
+		"130_25mm_Shot_2000m_SoundShader",
+		"130_25mm_Shot_4000m_SoundShader"
+	};
+	volumeFactor=1;
+	distancefilter="GunShip_distance_filter";
+	sound3DProcessingType="HeavyGAU_WeaponShotEcho_3DProcessor";
+	obstructionFactor=0.3;
+	occlusionFactor=0.5;
+	spatial=1;
+	frequencyrandomizer=0.5;
+};
+class 130_25mm_Shot50_SoundSet: 130_25mm_Shot25_SoundSet
+{
+	soundShaders[]=
+	{
+		"130_25mm_Shot50_150m_SoundShader",
+		"130_25mm_Shot_550m_SoundShader",
+		"130_25mm_Shot_2000m_SoundShader",
+		"130_25mm_Shot_4000m_SoundShader"
+	};
+};
+class 130_25mm_Shot100_SoundSet: 130_25mm_Shot25_SoundSet
+{
+	soundShaders[]=
+	{
+		"130_25mm_Shot100_150m_SoundShader",
+		"130_25mm_Shot_550m_SoundShader",
+		"130_25mm_Shot_2000m_SoundShader",
+		"130_25mm_Shot_4000m_SoundShader"
+	};
+};
+class 130_25mm_Tail_SoundSet: 130_25mm_Shot25_SoundSet
+{
+	soundShaders[]=
+	{
+		"130_25mm_Tail_SoundShader"
+	};
+	volumeFactor=1;
+	frequencyRandomizer=1.2;
+	occlusionFactor=0.3;
+	obstructionFactor=0;
+	frequencyRandomizerMin=0.1;
+};

@@ -1,4 +1,4 @@
-class Gau8_Fire_Hi_Int
+class Gau8_Fire_Hi_Int_SoundShader
 {
 	samples[]=
 	{
@@ -32,7 +32,7 @@ class Gau8_Fire_Hi_Int
 		{10,0}
 	};
 };
-class Gau8_Fire_Lo_Int
+class Gau8_Fire_Lo_Int_SoundShader
 {
 	samples[]=
 	{
@@ -66,7 +66,7 @@ class Gau8_Fire_Lo_Int
 		{10,0}
 	};
 };
-class Gau8_Fire_Near
+class Gau8_Fire_Near_SoundShader
 {
 	samples[]=
 	{
@@ -87,13 +87,17 @@ class Gau8_Fire_Near
 	};
 	volume="2*camPos";
 };
-class Gau8_Fire_Close
+class Gau8_Fire_Close_SoundShader
 {
 	samples[]=
 	{
 		
 		{
 			"MG8\TWA_SonCore\Snd\Weapons\A10\Van\gau8_close",
+			1
+		},
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\A10\Van\gau8_close_2",
 			1
 		}
 	};
@@ -109,7 +113,7 @@ class Gau8_Fire_Close
 	};
 	volume="2*camPos";
 };
-class Gau8_Fire_Mid
+class Gau8_Fire_Mid_SoundShader
 {
 	samples[]=
 	{
@@ -131,7 +135,7 @@ class Gau8_Fire_Mid
 	};
 	volume="2*camPos";
 };
-class Gau8_Fire_far
+class Gau8_Fire_far_SoundShader
 {
 	samples[]=
 	{
@@ -153,7 +157,7 @@ class Gau8_Fire_far
 	volume="4*camPos";
 };
 //Hi
-class Gau8_Fire_Hi_Near
+class Gau8_Fire_Hi_Near_SoundShader
 {
 	samples[]=
 	{
@@ -174,7 +178,7 @@ class Gau8_Fire_Hi_Near
 	};
 	volume="2*camPos";
 };
-class Gau8_Fire_Hi_Mid
+class Gau8_Fire_Hi_Mid_SoundShader
 {
 	samples[]=
 	{
@@ -196,7 +200,7 @@ class Gau8_Fire_Hi_Mid
 	};
 	volume="2*camPos";
 };
-class Gau8_Fire_Hi_Far
+class Gau8_Fire_Hi_Far_SoundShader
 {
 	samples[]=
 	{
@@ -216,4 +220,115 @@ class Gau8_Fire_Hi_Far
 		{4000,0}
 	};
 	volume="2*camPos";
+};
+
+//JSRS 1.4
+class Gau8_JS14_Fire_Near_SoundShader: Gau8_Fire_Near_SoundShader
+{
+	samples[]=
+	{
+		
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\A10\J14\gau8_near",
+			1
+		}
+	};
+};
+class Gau8_JS14_Fire_Close_SoundShader: Gau8_Fire_Close_SoundShader
+{
+	samples[]=
+	{
+		
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\A10\J14\gau8_close",
+			1
+		}
+	};
+};
+class Gau8_JS14_Fire_Mid_SoundShader: Gau8_Fire_Mid_SoundShader
+{
+	samples[]=
+	{
+		
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\A10\J14\gau8_mid",
+			1
+		}
+	};
+};
+class Gau8_JS14_Fire_far_SoundShader: Gau8_Fire_far_SoundShader
+{
+	samples[]=
+	{
+		
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\A10\J14\gau8_far",
+			1
+		}
+	};
+};
+
+//Full Auto
+class Gau8_Auto_Fire_Int_SoundShader
+{
+	samples[]=
+	{
+		
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\A10\Full\GAU8_0m_1",
+			1
+		}
+	};
+	volume=1;
+	range=10;
+	rangeCurve[]=
+	{
+		{0,1},
+		{5,0},
+		{10,0}
+	};
+};
+class Gau8_Auto_Fire_Near_SoundShader: Gau8_Fire_Near_SoundShader
+{
+	samples[]=
+	{
+		
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\A10\Full\GAU8_500m_1",
+			1
+		}
+	};
+};
+class Gau8_Auto_Fire_Close_SoundShader: Gau8_Fire_Close_SoundShader
+{
+	samples[]=
+	{
+		
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\A10\Full\GAU8_1000m_1",
+			1
+		}
+	};
+};
+class Gau8_Auto_Fire_Mid_SoundShader: Gau8_Fire_Mid_SoundShader
+{
+	samples[]=
+	{
+		
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\A10\Full\GAU8_2000m_1",
+			1
+		}
+	};
+};
+class Gau8_Auto_Fire_Far_SoundShader: Gau8_Fire_far_SoundShader
+{
+	samples[]=
+	{
+		
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\A10\Full\GAU8_4000m_1",
+			1
+		}
+	};
 };

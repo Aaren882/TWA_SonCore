@@ -184,6 +184,135 @@ class GAU_127mm_YakB_1000m_SoundShader
 	};
 };
 
+//M61
+class M61_Fire_SoundShader
+{
+	
+	samples[]=
+	{
+		
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\Cannon\M61\f18_0m_01",
+			1
+		},
+		
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\Cannon\M61\f18_0m_02",
+			1
+		}
+	};
+	volume=1;
+	range=10;
+	rangeCurve[]=
+	{
+		{0,1},
+		{5,0},
+		{10,0}
+	};
+};
+class M61_Fire_3rd_SoundShader
+{
+	samples[]=
+	{
+		
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\Cannon\M61\f18_200m_01",
+			1
+		},
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\Cannon\M61\f18_200m_02",
+			1
+		}
+	};
+	volume="camPos";
+	range=200;
+	rangeCurve[]=
+	{
+		{0,0},
+		{10,0},
+		{15,1},
+		{50,1},
+		{200,0}
+	};
+};
+class M61_Fire_Naer_Close_SoundShader
+{
+	samples[]=
+	{
+		
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\Cannon\M61\f18_400m_01",
+			1
+		},
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\Cannon\M61\f18_400m_02",
+			1
+		}
+	};
+	volume="2*camPos";
+	frequency=1;
+	range=800;
+	rangeCurve[]=
+	{
+		{0,0},
+		{200,0},
+		{201,1},
+		{799,0.8},
+		{800,0}
+	};
+};
+class M61_Fire_Close_SoundShader
+{
+	samples[]=
+	{
+		
+		/*{
+			"MG8\TWA_SonCore\Snd\Weapons\Cannon\M61\f18_500m_01",
+			1
+		},*/
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\Cannon\M61\f18_500m_02",
+			1
+		}
+	};
+	volume="1.5*camPos";
+	frequency=1;
+	range=3000;
+	rangeCurve[]=
+	{
+		{0,0},
+		{800,0},
+		{801,1},
+		{2999,0.8},
+		{3000,0}
+	};
+};
+class M61_Fire_Near_SoundShader
+{
+	samples[]=
+	{
+		
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\Cannon\M61\f18_2000m_01",
+			1
+		}/*,
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\Cannon\M61\f18_2000m_02",
+			1
+		}*/
+	};
+	volume="2*camPos";
+	range=3000;
+	rangeCurve[]=
+	{
+		{0,0},
+		{2000,0},
+		{2001,1},
+		{2999,0.8},
+		{3000,0}
+	};
+};
+
 //Gsh
 class Gsh_Fire_SoundShader
 {
@@ -415,7 +544,28 @@ class GAU_30mm_Tail_SoundShader
 		{1000,0.3},
 		{2000,0}
 	};
-	limitation=1;
+};
+class M61_Fire_Tail_SoundShader
+{
+	samples[]=
+	{
+		
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\Cannon\M61\f18_Tail",
+			1
+		}
+	};
+	volume="0.5*camPos";
+	range=100;
+	rangeCurve[]=
+	{
+		{0,0},
+		{5,0},
+		{15,0.6},
+		{100,1},
+		{2000,1},
+		{3000,0}
+	};
 };
 class GAU_Fire_Tail_SoundShader
 {
@@ -436,5 +586,4 @@ class GAU_Fire_Tail_SoundShader
 		{15,1},
 		{100,0},
 	};
-	limitation=1;
 };

@@ -25,6 +25,9 @@ class CfgFunctions
 			class plane
 			{
 			};
+			class setVolume
+			{
+			};
 		};
 	};
 };

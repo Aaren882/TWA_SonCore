@@ -143,7 +143,7 @@ class CAS_01_EngineExt_Distance_Front_SoundShader_Base: JetFX_EngineExt_Distance
 			1
 		}
 	};
-	volume="0.5*machcone*(CustomSoundController15+1)*camext*(rpm factor[0, 1])*(thrust factor[0.6, 0.8])";
+	volume="0.5*machcone*(CustomSoundController15+1)*camext*(rpm factor[0, 1])*(CustomSoundController20)";
 	range=2000;
 	rangeCurve[]=
 	{
@@ -165,7 +165,7 @@ class CAS_01_EngineExt_Side_SoundShader_Base: JetFX_EngineExt_Side_SoundShader_B
 		}
 	};
 	frequency="(rpm factor[0, 1])*(speed factor[2, 200])";
-	volume="machcone*(CustomSoundController15+1)*camext*(rpm factor[0, 1])*(thrust factor[0.3, 0.8])";
+	volume="machcone*(CustomSoundController15+1)*camext*(rpm factor[0, 1])*(CustomSoundController20)";
 	range=800;
 	rangeCurve[]=
 	{
@@ -185,7 +185,7 @@ class CAS_01_ForsageExt_SoundShader_Base: JetFX_ForsageExt_SoundShader_Base
 		}
 	};
 	frequency=1;
-	volume="machcone*(CustomSoundController15+1)*camext*(rpm factor[0, 1])*(thrust factor[0.3, 0.8])";
+	volume="machcone*(CustomSoundController15+1)*camext*(rpm factor[0, 1])*(CustomSoundController20)";
 	range=1200;
 	rangeCurve[]=
 	{
@@ -194,7 +194,7 @@ class CAS_01_ForsageExt_SoundShader_Base: JetFX_ForsageExt_SoundShader_Base
 		{1200,0}
 	};
 };
-class CAS_01_EngineNoise_Ext_SoundShader: JetFX_EngineNoise_Ext_SoundShader
+class CAS_01_EngineNoise_Ext_SoundShader_Base: JetFX_EngineNoise_Ext_SoundShader_Base
 {
 	samples[]=
 	{
@@ -205,7 +205,7 @@ class CAS_01_EngineNoise_Ext_SoundShader: JetFX_EngineNoise_Ext_SoundShader
 		}
 	};
 	frequency=1;
-	volume="machcone*(CustomSoundController15+1)*camext*(rpm factor[0, 1])*(thrust factor[0.4, 1])";
+	volume="machcone*(CustomSoundController15+1)*camext*(rpm factor[0, 1])*(CustomSoundController20)";
 	range=2000;
 	rangeCurve[]=
 	{
@@ -225,7 +225,7 @@ class CAS_01_ForsageExtDis_SoundShader_Base
 		}
 	};
 	frequency=1;
-	volume="machcone*(CustomSoundController15+1)*camext*(rpm factor[0, 1])*(thrust factor[0.3, 1])";
+	volume="machcone*(CustomSoundController15+1)*camext*(rpm factor[0, 1])*(speed factor[1, 56])";
 	range=1800;
 	rangeCurve[]=
 	{

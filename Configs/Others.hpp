@@ -5,7 +5,7 @@ class CfgSoundShapes
 	{
 		type="cone";
 		innerVolume=1.0;
-		outerVolume=0.2;
+		outerVolume=0.1;
 		innerAngle=135;
 		outerAngle=300;
 		azimuth=180;
@@ -14,7 +14,11 @@ class CfgSoundShapes
 	class JetFX_RearSideClose_shape: JetFX_RearSide_shape
 	{
 		innerAngle=140;
-		outerAngle=250;
+		outerAngle=300;
+		outerVolume=0.2;
+	};
+	class JetFX_Slow_RearSideClose_shape: JetFX_RearSideClose_shape
+	{
 		outerVolume=0.15;
 	};
 	class JetFX_FlyBy_shape
@@ -22,8 +26,8 @@ class CfgSoundShapes
 		type="cone";
 		innerVolume=1.0;
 		outerVolume=0.01;
-		innerAngle=150;
-		outerAngle=210;
+		innerAngle=85;
+		outerAngle=120;
 		azimuth=0;
 		elevation=0;
 	};
@@ -116,9 +120,8 @@ class CfgSoundCurves
 	{
 		points[]=
 		{
-			{0.0,1.0},
-			{0.4,0.9},
-			{0.8,0.6},
+			{0.0,2.0},
+			{0.8,0.8},
 			{1.0,0.0}
 		};
 	};
@@ -192,7 +195,7 @@ class CfgSound3DProcessors
 	//Sonic Boom
 	class JetFX_SonicBoom_3DProcessingType
 	{
-		type="emitter";
+		type="panner";
 		innerRange=5000;
 		range=5000;
 		rangeCurve="Smooth1Curve";
@@ -254,7 +257,7 @@ class CfgSound3DProcessors
 		rangeCurve="LinearCurve";
 		radius=6;
 	};
-	class HeavyGAU_Int_Shot_3DProcessor
+	class HeavyGAU_Int_Shot_3DProcessor: HeavyGAU_WeaponShotEcho_3DProcessor
 	{
 		type="panner";
 		innerRange=8;
@@ -299,6 +302,12 @@ class CfgSound3DProcessors
 		innerrange=0;
 		range=100;
 		rangecurve="VFX_basic_processorcurve";
+	};
+	
+	//Gunship
+	class GunShip_Int_Shot_3DProcessor: HeavyGAU_Int_Shot_3DProcessor
+	{
+		range=15;
 	};
 };
 //-DistanceFilters
@@ -413,16 +422,12 @@ class cfgDistanceFilters
 	};
 	
 	//GAU-8
-	class A10_HeavyGAU_distance_filter
+	class A10_HeavyGAU_distance_filter: HeavyGAU_distance_filter
 	{
-		type="lowpassfilter";
-		mincutofffrequency=30;
-		qfactor=1;
 		innerrange=100;
 		range=4000;
-		powerfactor=32;
 	};
-	class A10_HeavyGAU_Int_Shot_filter
+	/*class A10_HeavyGAU_Int_Shot_filter: HeavyGAU_Int_Shot_filter
 	{
 		type="lowpassfilter";
 		mincutofffrequency=40;
@@ -430,7 +435,7 @@ class cfgDistanceFilters
 		innerrange=1;
 		range=50;
 		powerfactor=10;
-	};
+	};*/
 	
 	//Rocket
 	class Rockets_Fire_weapons_lowpass_filter
@@ -450,5 +455,25 @@ class cfgDistanceFilters
 		innerrange=30;
 		range=300;
 		powerfactor=75;
+	};
+	
+	//GunShip
+	class GunShip_distance_filter
+	{
+		type="lowpassfilter";
+		mincutofffrequency=30;
+		qfactor=1;
+		innerrange=8;
+		range=3000;
+		powerfactor=35;
+	};
+	class GunShip_Int_Shot_filter
+	{
+		type="lowpassfilter";
+		mincutofffrequency=40;
+		qfactor=0.5;
+		innerrange=1;
+		range=15;
+		powerfactor=15;
 	};
 };

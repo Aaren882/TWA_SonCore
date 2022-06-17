@@ -31,7 +31,7 @@ class Heli_01_TR_Engine_Distance_SoundShader
 		}
 	};
 	frequency="rotorspeed * (1-rotorthrust/15) * 1.25";
-	volume="((rotorspeed-0.72)*4)*camPos";
+	volume="(CustomSoundController14+1)*((rotorspeed-0.72)*4)*camPos";
 	range=1000;
 	rangecurve[]=
 	{

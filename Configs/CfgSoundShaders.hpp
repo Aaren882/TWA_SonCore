@@ -31,7 +31,7 @@ class G_Breath
 		}
 	};
 	frequency= "(0.1+(1.75*(speed factor[1, 175])))";
-	volume="(1 + CustomSoundController25) * engineOn*camInt*((gmeterZ factor[1.5, 2.5]) + (gmeterZ factor[0.5, -0.5]))*((((-speed*3.6) max speed*3.6)/	600) factor[(((-150) max 150)/	600),(((-600) max 600)/	600)])";
+	volume="(1 + CustomSoundController25)*engineOn*camInt*((gmeterZ factor[1.5, 2.5]) + (gmeterZ factor[0.5, -0.5]))*((((-speed*3.6) max speed*3.6)/	600) factor[(((-150) max 150)/	600),(((-600) max 600)/	600)])";
 };
 class Int_gForce_SoundShader
 {
@@ -43,10 +43,21 @@ class Int_gForce_SoundShader
 			1
 		}
 	};
-	frequency="0.8 + (0.4 * (gmeterZ factor [1.8,5]))";
-	volume="(1 + CustomSoundController26) * camInt * (gmeterZ factor [1.8,5])";
+	frequency="0.8 + (0.4*(gmeterZ factor [1.8,5]))";
+	volume="(1 + CustomSoundController26)*camInt*(gmeterZ factor [1.8,5])";
 };
 class Plane_CAS_01_Int_gForce_hard_soundShader: Int_gForce_SoundShader{};
+class Int_gForce_Wind_SoundShader: Int_gForce_SoundShader
+{
+	samples[]=
+	{
+		
+		{
+			"MG8\TWA_SonCore\Snd\GForce\int_gForce_hard_wind",
+			1
+		}
+	};
+};
 //Sonic Boom
 class JetFX_sonicboom_Close_SoundShader
 {
@@ -91,14 +102,19 @@ class JetFX_sonicboom_Far_SoundShader
 	};
 };
 
+
 //Weapons
 #include "Weapons\Rockets_Shaders.hpp"
 #include "Weapons\GAU8_Shaders.hpp"
 #include "Weapons\Getling_Shaders.hpp"
 #include "Weapons\Cannon_Shaders.hpp"
 #include "Weapons\Others_Shaders.hpp"
+#include "Weapons\Gunship\25mm_Shaders.hpp"
+#include "Weapons\Gunship\40mm_Shaders.hpp"
+#include "Weapons\Gunship\105mm_Shaders.hpp"
 
-//Jet Engines
+//-Jet Engines
+
 // -Idle
 class JetFX_EngineLowExt_Front_SoundShader_Base
 {
@@ -111,13 +127,13 @@ class JetFX_EngineLowExt_Front_SoundShader_Base
 		}
 	};
 	frequency="(rpm factor[0, 1])*(CustomSoundController19+1)";
-	volume="0.8*machcone*(CustomSoundController15+1)*camext*(rpm factor[0, 1])*(thrust factor[1.0, 0.4])";
-	range=300;
+	volume="0.8*machcone*(CustomSoundController15+1)*camext*(rpm factor[0, 1])*(thrust factor[1.1, 0.4])*(CustomSoundController13)";
+	range=500;
 	rangeCurve[]=
 	{
 		{0,1},
-		{200,0.2},
-		{300,0}
+		{350,0.2},
+		{500,0}
 	};
 };
 class JetFX_EngineLowExt_Distance_Front_SoundShader_Base: JetFX_EngineLowExt_Front_SoundShader_Base
@@ -153,7 +169,7 @@ class JetFX_EngineLowExt_Side_SoundShader_Base
 		}
 	};
 	frequency="1.0 min (rpm + 0.3)*(rpm factor[0, 1])*(CustomSoundController19+1)";
-	volume="0.8*machcone*(CustomSoundController15+1)*camext*(rpm factor[0, 1])*(thrust factor[1.0, 0.4])";
+	volume="0.8*machcone*(CustomSoundController15+1)*camext*(rpm factor[0, 1])*(thrust factor[1.2, 0.4])*(CustomSoundController13)";
 	range=200;
 	rangeCurve[]=
 	{
@@ -172,7 +188,7 @@ class JetFX_EngineLowExt_SoundShader_Base: JetFX_EngineLowExt_Front_SoundShader_
 			1
 		}
 	};
-	volume="0.8*machcone*(CustomSoundController15+1)*camext*(rpm factor[0, 1])*(thrust factor[1.0, 0.4])";
+	volume="0.8*machcone*(CustomSoundController15+1)*camext*(rpm factor[0, 1])*(thrust factor[1.0, 0.4])*(CustomSoundController13)";
 };
 class JetFX_EngineLowExt_Distance_SoundShader_Base
 {
@@ -185,7 +201,7 @@ class JetFX_EngineLowExt_Distance_SoundShader_Base
 		}
 	};
 	frequency="(rpm factor[0, 1])*(CustomSoundController19+1)";
-	volume="0.1*machcone*(CustomSoundController15+1)*camext*(rpm factor[0, 1])*(thrust factor[1.1, 0.4])";
+	volume="0.1*machcone*(CustomSoundController15+1)*camext*(rpm factor[0, 1])*(thrust factor[1.2, 0.4])";
 	range=800;
 	rangeCurve[]=
 	{
@@ -206,7 +222,7 @@ class JetFX_IdleExtDis_SoundShader_Base
 		}
 	};
 	frequency="(rpm factor[0, 1])*(CustomSoundController19+1)";
-	volume="machcone*(CustomSoundController15+1)*camext*(rpm factor[0, 1])*(thrust factor[1.0, 0.2])";
+	volume="machcone*(CustomSoundController15+1)*camext*(rpm factor[0, 1])*(thrust factor[1.0, 0.2])*(CustomSoundController13)";
 	range=1000;
 	rangeCurve[]=
 	{
@@ -217,7 +233,52 @@ class JetFX_IdleExtDis_SoundShader_Base
 		{1000,0}
 	};
 };
-/////////////////////////////////////////////////////
+class JetFX_EngineExt_Close_Whine_SoundShader_Base
+{
+	samples[]=
+	{
+		
+		{
+			"MG8\TWA_SonCore\Snd\Engine\Plane\Ext\Engine_Whine",
+			1
+		}
+	};
+	frequency="(rpm factor[0, 1])*(speed factor[2, 200])";
+	volume="machcone*(CustomSoundController15+1)*camext*(rpm factor[0, 1])*(thrust factor[0.6, 0])*(CustomSoundController13)";
+	range=500;
+	rangeCurve[]=
+	{
+		{0,0.1},
+		{400,0.5},
+		{600,0}
+	};
+};
+//////////////////////Wind////////////////////////////
+class JetFX_EngineExt_Close_Front_Wind_SoundShader_Base: JetFX_EngineLowExt_Front_SoundShader_Base
+{
+	samples[]=
+	{
+		
+		{
+			"MG8\TWA_SonCore\Snd\Engine\Plane\Ext\Engine_Wind",
+			1
+		}
+	};
+	frequency="(rpm factor[0, 1])*(thrust factor[1.0, 2])";
+	volume="machcone*(CustomSoundController15+1)*camext*(rpm factor[0, 1])*(CustomSoundController20)";
+};
+class JetFX_EngineExt_Close_Rear_Wind_SoundShader_Base: JetFX_EngineExt_Close_Front_Wind_SoundShader_Base
+{
+	samples[]=
+	{
+		
+		{
+			"MG8\TWA_SonCore\Snd\Engine\Plane\Ext\Engine_Wind",
+			1
+		}
+	};
+};
+//////////////////////////////////////////////////////
 class JetFX_EngineExt_Close_Front_SoundShader_Base
 {
 	samples[]=
@@ -234,28 +295,9 @@ class JetFX_EngineExt_Close_Front_SoundShader_Base
 	rangeCurve[]=
 	{
 		{0,1},
-		{800,0.3},
+		{100,2},
+		{600,0.3},
 		{1000,0}
-	};
-};
-class JetFX_EngineExt_Close_Whine_SoundShader_Base
-{
-	samples[]=
-	{
-		
-		{
-			"MG8\TWA_SonCore\Snd\Engine\Plane\Ext\Engine_Whine",
-			1
-		}
-	};
-	frequency="(rpm factor[0, 1])*(speed factor[2, 200])";
-	volume="machcone*(CustomSoundController15+1)*camext*(rpm factor[0, 1])*(thrust factor[0.6, 0.8])";
-	range=800;
-	rangeCurve[]=
-	{
-		{0,0.1},
-		{700,1},
-		{800,0}
 	};
 };
 class JetFX_EngineExt_Distance_Front_SoundShader_Base: JetFX_EngineExt_Close_Front_SoundShader_Base
@@ -264,7 +306,7 @@ class JetFX_EngineExt_Distance_Front_SoundShader_Base: JetFX_EngineExt_Close_Fro
 	{
 		
 		{
-			"MG8\TWA_SonCore\Snd\Engine\Plane\Ext\Engine_Wind",
+			"MG8\TWA_SonCore\Snd\Engine\Plane\Ext\Engine_Wind_Dis",
 			1
 		}
 	};
@@ -274,8 +316,8 @@ class JetFX_EngineExt_Distance_Front_SoundShader_Base: JetFX_EngineExt_Close_Fro
 	{
 		{0,0},
 		{500,0},
-		{1000,0.5},
-		{1300,1},
+		{1000,1},
+		{1300,0.3},
 		{2000,0}
 	};
 };
@@ -311,15 +353,16 @@ class JetFX_ForsageExt_SoundShader_Base
 	};
 	frequency=1;
 	volume="machcone*(CustomSoundController15+1)*camext*(rpm factor[0, 1])*(CustomSoundController20)";
-	range=1000;
+	range=1500;
 	rangeCurve[]=
 	{
 		{0,1},
-		{800,0.2},
-		{1000,0}
+		{100,2},
+		{1000,0.3},
+		{1500,0}
 	};
 };
-class JetFX_EngineNoise_Ext_SoundShader
+class JetFX_EngineNoise_Ext_SoundShader_Base
 {
 	samples[]=
 	{
@@ -339,7 +382,25 @@ class JetFX_EngineNoise_Ext_SoundShader
 		{1500,0}
 	};
 };
-class JetFX_BurnerNoise_Ext_SoundShader_Base
+class JetFX_EngineNoiseH_Ext_SoundShader_Base: JetFX_EngineNoise_Ext_SoundShader_Base
+{
+	samples[]=
+	{
+		
+		{
+			"MG8\TWA_SonCore\Snd\Engine\Plane\Ext\Engine_Noise_H",
+			1
+		}
+	};
+	range=100;
+	rangeCurve[]=
+	{
+		{0,1},
+		{75,1},
+		{100,0}
+	};
+};
+class JetFX_BurnerNoise_Ext_SoundShader_Base: JetFX_ForsageExt_SoundShader_Base
 {
 	samples[]=
 	{
@@ -349,18 +410,8 @@ class JetFX_BurnerNoise_Ext_SoundShader_Base
 			1
 		}
 	};
-	frequency=1;
-	volume="machcone*(CustomSoundController15+1)*camext*(rpm factor[0, 1])*(CustomSoundController20)";
-	range=1000;
-	rangeCurve[]=
-	{
-		{0,0},
-		{100,0.1},
-		{800,1},
-		{1000,0}
-	};
 };
-class JetFX_ForsageExtDis_SoundShader_Base
+class JetFX_ForsageExtDis_SoundShader_Base: JetFX_ForsageExt_SoundShader_Base
 {
 	samples[]=
 	{
@@ -370,18 +421,16 @@ class JetFX_ForsageExtDis_SoundShader_Base
 			1
 		}
 	};
-	frequency=1;
-	volume="machcone*(CustomSoundController15+1)*camext*(rpm factor[0, 1])*(CustomSoundController20)";
-	range=2500;
+	range=3000;
 	rangeCurve[]=
 	{
 		{0,0.4},
 		{1000,1},
-		{1200,0.3},
-		{2500,0}
+		{2500,0.5},
+		{3000,0}
 	};
 };
-class JetFX_ForsageExtFar_SoundShader_Base
+class JetFX_ForsageExtFar_SoundShader_Base: JetFX_ForsageExt_SoundShader_Base
 {
 	samples[]=
 	{
@@ -391,15 +440,13 @@ class JetFX_ForsageExtFar_SoundShader_Base
 			1
 		}
 	};
-	frequency=1;
-	volume="machcone*(CustomSoundController15+1)*camext*(rpm factor[0, 1])*(CustomSoundController20)";
 	range=2500;
 	rangeCurve[]=
 	{
 		{0,0},
 		{1000,0},
 		{1200,1},
-		{2000,0.3},
+		{2000,0.5},
 		{2500,0}
 	};
 };
@@ -514,7 +561,77 @@ class JetFX_Whine_EngineIntTR_SoundShader_Base: JetFX_Whine_EngineInt_SoundShade
 		}
 	};
 };
+
 ////////////////////Vehicles///////////////////////////
 #include "Vehicles\CAS_01_Shaders.hpp"
 #include "Vehicles\Helis_Base_Shaders.hpp"
 #include "Vehicles\Heli_01_Shaders.hpp"
+
+//Environment Noises
+// -External
+class JetFX_Rain_Ext_SoundShader_Base: HeliFX_Rain_Ext_SoundShader_Base
+{
+	volume="camPos * rain * (speed factor[50, 0])";
+};
+
+// -Internal
+class JetFX_scrubLandInt_SoundShader_Base
+{
+	samples[]=
+	{
+		{
+			"A3\Sounds_F\vehicles\air\noises\wheelsInt",
+			1
+		}
+	};
+	frequency=1;
+	volume="2*(CustomSoundController17+1)*camInt*(scrubLand factor[0.02, 0.05])*(1-(lateralMovement factor [0.7,1]))";
+};
+class JetFX_RainInt_SoundShader_Base
+{
+	samples[]=
+	{
+		{
+			"A3\Sounds_F\vehicles\noises\rain1_int",
+			1
+		}
+	};
+	frequency=1;
+	volume="(CustomSoundController17+1)*camInt*rain*(speed factor[50, 0])";
+};
+class JetFX_WindInt_SoundShader_Base
+{
+	samples[]=
+	{
+		{
+			"A3\Sounds_F\vehicles\air\noises\wind_closed",
+			1
+		}
+	};
+	frequency=1;
+	volume="(CustomSoundController17+1)*camInt*(speed factor[5, 50])*(speed factor[5, 50])";
+};
+class JetFX_GStress_SoundShader_Base
+{
+	samples[]=
+	{
+		{
+			"A3\Sounds_F\vehicles\noises\vehicle_stress2c",
+			1
+		}
+	};
+	frequency=1;
+	volume="engineOn*(CustomSoundController17+1)*camInt*(gmeterZ factor[1.0, 2.5])";
+};
+class JetFX_SpeedStress_SoundShader_Base
+{
+	samples[]=
+	{
+		{
+			"A3\Sounds_F\vehicles\noises\vehicle_stress3",
+			1
+		}
+	};
+	frequency=1;
+	volume="(CustomSoundController17+1)*camInt*(speed factor[60,80])";
+};
