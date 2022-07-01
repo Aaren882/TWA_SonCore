@@ -100,11 +100,7 @@ class MG8_autoLo: MG8_autoBase
 	};
 	class StandardSound
 	{
-		soundsetshot[]=
-		{
-			"Gau8_Fire_Lo_Int_SoundSet",
-			"Gau8_Fire_Lo_SoundSet"
-		};
+		soundsetshot[]= sound_shot_Lo;
 	};
 	burst=32;
 	reloadTime=0.01;
@@ -123,11 +119,7 @@ class MG8_autoHi: MG8_autoBase
 	};
 	class StandardSound
 	{
-		soundsetshot[]=
-		{
-			"Gau8_Fire_Hi_Int_SoundSet",
-			"Gau8_Fire_Hi_SoundSet"
-		};
+		soundsetshot[]= sound_shot_Hi;
 	};
 	burst=60;
 	reloadTime=0.009;
