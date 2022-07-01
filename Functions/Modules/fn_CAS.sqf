@@ -1,4 +1,4 @@
-params ["_logic","_trigger_range"];
+params ["_logic"];
 
 _Set_PitchBank = {
 	if (_casType == 3) then {
@@ -13,17 +13,22 @@ _Set_PitchBank = {
 };
 //missionnamespace setvariable ["RscATtributeCAS_TWA_selected",""];
 
-//Basic Definition
-_casType = _logic getvariable "type";
+_casType = _logic getvariable ["type",1];
+_trigger_range = if (missionnamespace getvariable ["Attack_Range",0] == 0) then {
+  _logic getvariable ["Attack_Range",2000];
+} else {
+	missionnamespace getvariable "Attack_Range";
+};
+_planeClass = _logic getvariable ["vehicle","B_Plane_CAS_01_dynamicLoadout_F"];
 
+//Basic Definition
 _dis = 4000;
 _alt = if (_casType == 3) then {500} else {2000};
 _speed = 800 / 3.6;
 _duration = ([0,0] distance [_dis,_alt]) / _speed;
 _weapons = [];
-_planeClass = _logic getvariable ["vehicle","B_Plane_CAS_01_dynamicLoadout_F"];
+
 _All_weapons = _planeClass call bis_fnc_weaponsEntityType;
-_logic_Dir = missionnamespace getvariable ["TWAF_fnc_CAS_Dir",0];
 _logic hideObject false;
 _planeCfg = configfile >> "cfgvehicles" >> _planeClass;
 _fireNull = true;
@@ -89,8 +94,7 @@ _posATL = _logic modelToWorld _target_offset;
 _pos =+ _posATL;
 _pos set [2,(_pos # 2) + getTerrainHeightASL _pos];
 _dir = direction _logic;
-
-_awayPos = _plane getVariable ["CAS_AwayPOS",[_pos,_dis,_dir+90] call bis_fnc_relpos];
+_logic_Dir = missionnamespace getvariable ["TWAF_fnc_CAS_Dir",_dir];
 
 //Vehicle Setups
 _planePos = [_pos,_dis,_dir + 180] call bis_fnc_relpos;
@@ -102,14 +106,17 @@ _planeSide = (getnumber (_planeCfg >> "side")) call bis_fnc_sideType;
 _plane = _planeArray # 0; */
 _plane = createVehicle [_planeClass, _planePos, [], 0, "FLY"];
 createVehicleCrew _plane;
+
 _plane setdir _dir;
+_awayPos = _plane getVariable ["CAS_AwayPOS",[_pos,_dis,_dir+90] call bis_fnc_relpos];
+_plane setSpeedMode "FULL";
 
 [_plane,_logic] spawn {
 	params ["_plane","_logic"];
-	uisleep 1;
+	uisleep 2;
 	if !(_plane getVariable ["VCN_Actived", false]) then {
-	  hint "CAS module is not ready yet.";
-		deletevehicle _logic;
+		//hint "CAS module is not ready yet.";
+		[_plane,cameraOn] spawn VCN_fnc_plane;
 	};
 };
 
@@ -177,7 +184,11 @@ _logic setdir _logic_Dir;
 
 	//Delete Vehicle
 	if !(alive _logic) then {
+		_group = group _plane;
+		_crew = crew _plane;
 		deletevehicle _plane;
+		{deletevehicle _x} foreach _crew;
+		deletegroup _group;
 	};
 
 	//Update plane with the module
@@ -239,7 +250,7 @@ _logic setdir _logic_Dir;
 				if ((_casType == 0) or (_casType == 1)) then {
 					_duration = 0.5;
 					if (_casType == 1) then {
-					  _duration = 1;
+						_duration = 1;
 					};
 				};
 
@@ -317,7 +328,7 @@ _logic setdir _logic_Dir;
 		[{
 				params ["_plane", "_awayPos"];
 
-				(_plane distance _awayPos < 1000) or !(alive _plane)
+				(_plane distance _awayPos < 200) or !(alive _plane)
 			}, {
 				params ["_plane"];
 

@@ -4,6 +4,7 @@
 params ["_mode", "_params", "_unit"];
 
 _call_Display = {
+	_count_available = _count_available + 1;
 	_lnbAdd = _ctrlValue lnbaddrow ["","",gettext (_planeCfg >> "displayName")];
 	_ctrlValue lnbSetValue [[_lnbAdd,0],_weaponTypesID];
 	_ctrlValue lnbSetData [[_lnbAdd,0],_planeClass];
@@ -107,7 +108,7 @@ if (isNil "CAS_PlaneInfoCache") then
 missionNamespace setVariable ["TWAF_weapon_types_list",CAS_PlaneInfoCache];
 _cas_info_list = CAS_PlaneInfoCache # _weaponTypesID;
 _cfgweapon_path = configFile >> "CfgWeapons";
-
+_count_available = 0;
 if (_weaponTypesID < 2) then {
 	{
 		_planeClass = _x # 0;
@@ -168,7 +169,7 @@ if (lnbcurselrow _ctrlValue < 0) then {
 ////////////////////////////////////////////
 
 //- onUnload
-private _fnc_onUnload = {
+_fnc_onUnload = {
 	params ["_display", "_exitCode"];
 	_unit = (missionnamespace getVariable "Display_TWAF_CAS_UI") # 1;
 
@@ -186,8 +187,12 @@ _display displayAddEventHandler ["Unload", _fnc_onUnload];
 
 ////////////////////////////////////////////
 
+if (_count_available == 0) exitWith {
+  hint "No Compatible MOD";
+};
+
 //- confirmed
-private _fnc_onConfirm = {
+_fnc_onConfirm = {
 	params ["_ctrlButtonOK"];
 
 	_display = ((missionnamespace getVariable "Display_TWAF_CAS_UI") # 0) # 0;
@@ -197,10 +202,9 @@ private _fnc_onConfirm = {
 	_vehicle = _ctrlValue lnbdata [lnbcurselrow _ctrlValue,0];
 
 	_unit setvariable ["vehicle",_vehicle,true];
-	_unit setvariable ["BIS_fnc_curatorAttributes",[],true];
 	//missionnamespace setvariable ["RscATtributeCAS_TWA_selected",_vehicle];
-	[_unit,(missionnamespace getvariable ["RscATtributeCAS_TWA_Attack_Range",2000])] call TWAF_fnc_CAS;
+	_unit call TWAF_fnc_CAS;
 };
 
-private _ctrlButtonOK = _display displayCtrl 1;
+_ctrlButtonOK = _display displayCtrl 1;
 _ctrlButtonOK ctrlAddEventHandler ["ButtonClick", _fnc_onConfirm];

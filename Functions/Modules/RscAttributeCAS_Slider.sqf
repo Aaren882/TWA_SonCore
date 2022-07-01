@@ -7,7 +7,7 @@ switch _mode do {
 		_display = _params select 0;
 		_ctrlSlider = _display displayctrl 15153;
 		_ctrlStext = _display displayctrl 15152;
-		_var_range = missionnamespace getvariable ["RscATtributeCAS_TWA_Attack_Range",2000];
+		_var_range = missionnamespace getvariable ["Attack_Range",2000];
 
 		_ctrlSlider slidersetposition _var_range;
 		_ctrlSlider ctrlenable alive _unit;
@@ -27,7 +27,7 @@ switch _mode do {
 		_ctrlSlider = _display displayctrl 15153;
 
 		_range = sliderposition _ctrlSlider;
-		missionnamespace setvariable ["RscATtributeCAS_TWA_Attack_Range",_range];
+		missionnamespace setvariable ["Attack_Range",_range];
 		_ctrlSlider ctrlRemoveEventHandler ["SliderPosChanged",(_unit getVariable ["RscATtributeCAS_TWA_Ctrl_EH",-1])];
 	};
 	case "onUnload": {
