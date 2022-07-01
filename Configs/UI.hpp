@@ -125,3 +125,69 @@ class TWA_CAS_Module: RscDisplayAttributesModuleCAS
 		};
 	};
 };
+class RscShortcutButton;
+class VCN_Debug_Button: RscShortcutButton
+{
+	idc = 1702;
+	text = "Aaren's Sound Core - Debug";
+	x = "1 * (((safezoneW / safezoneH) min 1.2) / 40) + (safezoneX)";
+	y = "0.490741 * safezoneH + safezoneY";
+	w = "0.185625 * safezoneW";
+	h = "0.022 * safezoneH";
+	colorText[] = {1,1,1,1};
+	colorBackground[] = {0.180392,0.372549,0.909804,0.8};
+	tooltip = "Fix Aircraft that is not applied";
+	
+	animTextureDefault = "#(argb,8,8,3)color(1,1,1,1)";
+	animTextureDisabled = "#(argb,8,8,3)color(1,1,1,1)";
+	animTextureFocused = "#(argb,8,8,3)color(1,1,1,1)";
+	animTextureNormal = "#(argb,8,8,3)color(1,1,1,1)";
+	animTextureOver = "#(argb,8,8,3)color(1,1,1,1)";
+	animTexturePressed = "#(argb,8,8,3)color(1,1,1,1)";
+	
+	action = "call VCN_fnc_debug;";
+	class ShortcutPos
+	{
+		left = 0;
+		top = 0;
+		w = 0;
+		h = 0;
+	};
+	class TextPos
+	{
+		left = 0.01;
+		top = 0;
+		right = 0;
+		bottom = 0;
+	};
+};
+
+class RscStandardDisplay;
+class RscDisplayMPInterrupt: RscStandardDisplay
+{
+	class controls
+	{
+		class VCN_Debug: VCN_Debug_Button{};
+	};
+};
+class RscDisplayInterrupt: RscStandardDisplay
+{
+	class controls
+	{
+		class VCN_Debug: VCN_Debug_Button{};
+	};
+};
+class RscDisplayInterruptEditor3D: RscStandardDisplay
+{
+	class controls
+	{
+		class VCN_Debug: VCN_Debug_Button{};
+	};
+};
+class RscDisplayInterruptEditorPreview: RscStandardDisplay
+{
+	class controls
+	{
+		class VCN_Debug: VCN_Debug_Button{};
+	};
+};

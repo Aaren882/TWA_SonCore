@@ -58,6 +58,7 @@ class Int_gForce_Wind_SoundShader: Int_gForce_SoundShader
 		}
 	};
 };
+
 //Sonic Boom
 class JetFX_sonicboom_Close_SoundShader
 {
@@ -101,7 +102,6 @@ class JetFX_sonicboom_Far_SoundShader
 		{4000,0}
 	};
 };
-
 
 //Weapons
 #include "Weapons\Rockets_Shaders.hpp"

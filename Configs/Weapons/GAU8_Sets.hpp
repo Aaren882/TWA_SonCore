@@ -67,6 +67,7 @@ class Gau8_J14_SoundSet: Gau8_Fire_Base_SoundSet
 		"Gau8_JS14_Fire_Mid_SoundShader",
 		"Gau8_JS14_Fire_far_SoundShader"
 	};
+	doppler=0;
 	frequencyRandomizer=1.2;
 	frequencyRandomizerMin=0.8;
 };

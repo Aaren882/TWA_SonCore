@@ -10,7 +10,7 @@ class Heli_01_TR_Rotor_Distance_SoundShader
 		}
 	};
 	frequency="rotorspeed * (1-rotorthrust/15) * 1";
-	volume="(CustomSoundController14+1)*camPos*(0 max (rotorspeed-0.1))*(1 + rotorthrust)";
+	volume="(CustomSoundController14+1)*camext*(0 max (rotorspeed-0.1))*(1 + rotorthrust)";
 	range=1200;
 	rangecurve[]=
 	{
@@ -31,7 +31,7 @@ class Heli_01_TR_Engine_Distance_SoundShader
 		}
 	};
 	frequency="rotorspeed * (1-rotorthrust/15) * 1.25";
-	volume="(CustomSoundController14+1)*((rotorspeed-0.72)*4)*camPos";
+	volume="(CustomSoundController14+1)*((rotorspeed-0.72)*4)*camext";
 	range=1000;
 	rangecurve[]=
 	{
@@ -51,7 +51,7 @@ class Heli_01_TR_EngineExt_SoundShader
 		}
 	};
 	frequency="rotorSpeed";
-	volume="(CustomSoundController14+1)*camPos*rotorSpeed";
+	volume="(CustomSoundController14+1)*camext*rotorSpeed";
 	range=1000;
 	rangecurve[]=
 	{
@@ -72,7 +72,7 @@ class Heli_01_TR_RotorExt_SoundShader: Heli_01_TR_EngineExt_SoundShader
 		}
 	};
 	frequency="(rotorSpeed factor [0.3, 0.7])*(rotorSpeed factor [0.3, 1])*(1 - rotorThrust/10)";
-	volume="(CustomSoundController14+1)*camPos*(rotorSpeed factor [0.3, 1])*(1 + rotorThrust)";
+	volume="(CustomSoundController14+1)*camext*(rotorSpeed factor [0.3, 1])*(1 + rotorThrust)";
 	range=1200;
 	rangecurve[]=
 	{
@@ -93,7 +93,7 @@ class Heli_01_TR_Turbine_Ext_SoundShader
 		}
 	};
 	frequency="rotorSpeed";
-	volume="(CustomSoundController14+1)*camPos*(0 max (rotorSpeed-0.4))";
+	volume="(CustomSoundController14+1)*camext*(0 max (rotorSpeed-0.4))";
 	range=200;
 	rangecurve[]=
 	{
@@ -114,7 +114,7 @@ class Heli_01_TR_TailRotor_SoundShader
 		}
 	};
 	frequency="rotorspeed * (1-rotorthrust/15) * 1.25";
-	volume="(CustomSoundController14+1)*camPos*0.25*(0 max (rotorspeed-0.5))*(1 + rotorthrust)";
+	volume="(CustomSoundController14+1)*camext*0.25*(0 max (rotorspeed-0.5))*(1 + rotorthrust)";
 	range=150;
 };
 
@@ -131,7 +131,7 @@ class Heli_01_TR_EngineInt_SoundShader
 		}
 	};
 	frequency="rotorSpeed*(1+rotorThrust/6)*0.8";
-	volume="(CustomSoundController16+1)*(1-camPos)*((rotorSpeed-0.75)*4)";
+	volume="(CustomSoundController16+1)*camInt*((rotorSpeed-0.75)*4)";
 };
 class Heli_01_TR_RotorInt_SoundShader
 {
@@ -144,5 +144,5 @@ class Heli_01_TR_RotorInt_SoundShader
 		}
 	};
 	frequency="rotorSpeed*(1-rotorThrust/5)*1.2";
-	volume="(CustomSoundController16+1)*(1-camPos)*(0 max (rotorSpeed-0.1))*(1 + rotorThrust)*0.9";
+	volume="(CustomSoundController16+1)*camInt*(0 max (rotorSpeed-0.1))*(1 + rotorThrust)*0.9";
 };

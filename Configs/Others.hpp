@@ -43,7 +43,7 @@ class CfgSoundShapes
 	};
 	class JetFX_Slow_Front_shape: JetFX_Front_shape
 	{
-		outerVolume=0.3;
+		outerVolume=0.5;
 	};
 	
 	//Helis

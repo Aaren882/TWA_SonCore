@@ -28,6 +28,9 @@ class CfgFunctions
 			class setVolume
 			{
 			};
+			class debug
+			{
+			};
 		};
 	};
 };

@@ -278,7 +278,6 @@ class JetFX_WindNoiseExt_SoundSet_Base: JetFX_External_Close_Base
 	};
 };
 
-
 //Internal
 class JetFX_EngineLowInt_SoundSet_Base: JetFX_Internal_Base
 {

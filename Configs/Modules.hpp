@@ -5,7 +5,7 @@ class TWA_CAS_Module: ModuleCAS_F
 	author = "Aaren";
 	displayName = "Aaren's CAS Module";
 	function = "TWAF_fnc_CAS";
-	category = "Ordnance";
+	category = "Aaren_Modules";
 	class Arguments
 	{
 		class Type
@@ -35,6 +35,31 @@ class TWA_CAS_Module: ModuleCAS_F
 				{
 					name = "Ripple Bomb Run";
 					value = 3;
+				};
+			};
+		};
+		class Attack_Range: Type
+		{
+			displayName = "Attacking Range";
+			typeName = "NUMBER";
+			defaultValue = "2000";
+			class values
+			{
+				class 1000mt
+				{
+					name = "1000m";
+					value = 1000;
+				};
+				class 1500mt
+				{
+					name = "1500m";
+					value = 1500;
+				};
+				class 2000mt
+				{
+					name = "2000m";
+					value = 2000;
+					default = 1;
 				};
 			};
 		};
@@ -114,7 +139,7 @@ class TWA_CAS_Module_Gun_Lo: ModuleCASGun_F
 {
 	scopeCurator = 2;
 	category = "Aaren_Modules";
-	
+
 	function = "";
 	_generalMacro = "TWA_CAS_Module_Gun";
 	displayName = "Aaren's CAS Module (Gun Lo)";
