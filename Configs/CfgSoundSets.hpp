@@ -127,7 +127,7 @@ class JetFX_EngineLowExt_SoundSet_Base: JetFX_External_Base
 		"JetFX_EngineLowExt_SoundShader_Base"
 	};
 	volumeCurve="JetFX_EngineLow_Base_Curve";
-	shape="JetFX_RearSide_shape";
+	shape="JetFX_RearSide_Low_shape";
 	sound3DProcessingType="JetExt_Close_3DProcessingType";
 };
 
@@ -158,7 +158,7 @@ class JetFX_EngineLowExt_Distance_SoundSet_Base: JetFX_External_Distance_Base
 	{
 		"JetFX_EngineLowExt_Distance_SoundShader_Base"
 	};
-	shape="JetFX_RearSide_shape";
+	shape="JetFX_RearSide_Low_shape";
 };
 ///////////////////Wind/////////////////////
 class JetFX_EngineExt_Close_Front_Wind_SoundSet_Base: JetFX_External_Close_Base
@@ -177,7 +177,7 @@ class JetFX_EngineExt_Close_Rear_Wind_SoundSet_Base: JetFX_External_Close_Base
 		"JetFX_EngineExt_Close_Rear_Wind_SoundShader_Base"
 	};
 	shape="JetFX_RearSideClose_shape";
-	volumeFactor=1.5;
+	volumeFactor=2;
 };
 ////////////////////////////////////////////
 class JetFX_EngineExt_Close_Front_SoundSet_Base: JetFX_External_Close_Base
@@ -216,7 +216,7 @@ class JetFX_ForsageExt_SoundSet_Base: JetFX_External_Close_Base
 	shape="JetFX_RearSideClose_shape";
 	sound3DProcessingType="JetFX_Forsage_Close_3DProcessingType";
 	distanceFilter="JetFX_Forsage_Close_Filter";
-	volumeFactor=1.5;
+	volumeFactor=2;
 };
 class JetFX_EngineNoise_Ext_SoundSet_Base: JetFX_External_Close_Base
 {

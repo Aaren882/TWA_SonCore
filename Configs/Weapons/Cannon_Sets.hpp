@@ -111,6 +111,7 @@ class GAU_25mm_Int_Shot_SoundSet: Gsh_Int_Shot_SoundSet
 	{
 		"GAU_25mm_Fire_SoundShader"
 	};
+	volumeFactor=2;
 	obstructionFactor=0.3;
 	occlusionFactor=0.5;
 };
@@ -122,6 +123,7 @@ class GAU_25mm_Shot_SoundSet: Gsh_Shot_SoundSet
 		"GAU_25mm_Fire_Close_SoundShader",
 		"GAU_25mm_Fire_Near_SoundShader"
 	};
+	volumeFactor=2;
 	frequencyRandomizer=1.0;
 	frequencyRandomizerMin=0.2;
 };

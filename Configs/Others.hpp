@@ -5,20 +5,24 @@ class CfgSoundShapes
 	{
 		type="cone";
 		innerVolume=1.0;
-		outerVolume=0.1;
+		outerVolume=0;
 		innerAngle=135;
 		outerAngle=300;
 		azimuth=180;
 		elevation=0;
 	};
+	class JetFX_RearSide_Low_shape: JetFX_RearSide_shape
+	{
+		outerVolume=0.1;
+	};
 	class JetFX_RearSideClose_shape: JetFX_RearSide_shape
 	{
-		innerAngle=140;
-		outerAngle=300;
-		outerVolume=0.2;
+		innerAngle=30;
+		outerVolume=0.05;
 	};
 	class JetFX_Slow_RearSideClose_shape: JetFX_RearSideClose_shape
 	{
+		innerAngle=140;
 		outerVolume=0.15;
 	};
 	class JetFX_FlyBy_shape

@@ -311,14 +311,13 @@ class JetFX_EngineExt_Distance_Front_SoundShader_Base: JetFX_EngineExt_Close_Fro
 		}
 	};
 	volume="0.5*machcone*(CustomSoundController15+1)*camext*(rpm factor[0, 1])*(thrust factor[0.6, 0.8])";
-	range=2000;
+	range=3000;
 	rangeCurve[]=
 	{
-		{0,0},
-		{500,0},
+		{0,0.4},
 		{1000,1},
-		{1300,0.3},
-		{2000,0}
+		{2500,0.5},
+		{3000,0}
 	};
 };
 class JetFX_EngineExt_Side_SoundShader_Base
