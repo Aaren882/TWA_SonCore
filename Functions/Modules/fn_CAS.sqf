@@ -102,8 +102,6 @@ _planePos set [2,(_pos # 2) + _alt];
 
 //Spawn the Aircraft
 _planeSide = (getnumber (_planeCfg >> "side")) call bis_fnc_sideType;
-/* _planeArray = [_planePos,_dir,_planeClass,_planeSide] call bis_fnc_spawnVehicle;
-_plane = _planeArray # 0; */
 _plane = createVehicle [_planeClass, _planePos, [], 0, "FLY"];
 createVehicleCrew _plane;
 
