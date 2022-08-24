@@ -64,6 +64,7 @@ class MNG_TP_0m_SoundShader
 			1
 		}
 	};
+	//frequency=1.45;
 	volume=0.5;
 	range=10;
 	rangeCurve[]=
