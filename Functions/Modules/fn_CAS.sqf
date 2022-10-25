@@ -19,12 +19,18 @@ _trigger_range = if (missionnamespace getvariable ["Attack_Range",0] == 0) then 
 } else {
 	missionnamespace getvariable "Attack_Range";
 };
+_fly_speed = if (missionnamespace getvariable ["Fly_Speed",0] == 0) then {
+  _logic getvariable ["Fly_Speed",800];
+} else {
+	missionnamespace getvariable "Fly_Speed";
+};
+
 _planeClass = _logic getvariable ["vehicle","B_Plane_CAS_01_dynamicLoadout_F"];
 
 //Basic Definition
 _dis = 4000;
 _alt = if (_casType == 3) then {500} else {2000};
-_speed = 800 / 3.6;
+_speed = _fly_speed / 3.6;
 _duration = ([0,0] distance [_dis,_alt]) / _speed;
 _weapons = [];
 
