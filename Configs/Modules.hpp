@@ -38,10 +38,34 @@ class TWA_CAS_Module: ModuleCAS_F
 				};
 			};
 		};
-		class Attack_Range: Type
+		class Fly_Speed: Type
+		{
+			displayName = "Fly Speed";
+			typeName = "NUMBER";
+			defaultValue = "800";
+			class values
+			{
+				class 300km
+				{
+					name = "300km/h";
+					value = 300;
+				};
+				class 500km
+				{
+					name = "500km/h";
+					value = 500;
+				};
+				class 800km
+				{
+					name = "800km/h";
+					value = 800;
+					default = 1;
+				};
+			};
+		};
+		class Attack_Range: Fly_Speed
 		{
 			displayName = "Attacking Range";
-			typeName = "NUMBER";
 			defaultValue = "2000";
 			class values
 			{

@@ -19,12 +19,13 @@ class MNG_0m_SoundShader
 	rangeCurve[]=
 	{
 		{0,1},
+		{4.9,0.8},
 		{5,0},
 		{10,0}
 	};
 };
 //Int
-class MNG_Int_0m_SoundShader
+class MNG_Int_0m_SoundShader: MNG_0m_SoundShader
 {
 	samples[]=
 	{
@@ -39,17 +40,10 @@ class MNG_Int_0m_SoundShader
 			1
 		}
 	};
-	volume=1;
-	range=10;
-	rangeCurve[]=
-	{
-		{0,1},
-		{10,0}
-	};
 };
 
 //TP
-class MNG_TP_0m_SoundShader
+class MNG_TP_0m_SoundShader: MNG_0m_SoundShader
 {
 	samples[]=
 	{
@@ -64,19 +58,12 @@ class MNG_TP_0m_SoundShader
 			1
 		}
 	};
-	//frequency=1.45;
+	frequency=1.2;
 	volume=0.5;
-	range=10;
-	rangeCurve[]=
-	{
-		{0,1},
-		{5,0},
-		{10,0}
-	};
 };
 
 //AH
-class MNG_AH_0m_SoundShader
+class MNG_AH_0m_SoundShader: MNG_0m_SoundShader
 {
 	samples[]=
 	{
@@ -95,14 +82,6 @@ class MNG_AH_0m_SoundShader
 			"MG8\TWA_SonCore\Snd\Weapons\MNG\AH\0m_3",
 			1
 		}
-	};
-	volume=1;
-	range=10;
-	rangeCurve[]=
-	{
-		{0,1},
-		{5,0},
-		{10,0}
 	};
 };
 class MNG_AH_50m_SoundShader

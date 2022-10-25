@@ -67,7 +67,7 @@ class RscAttributeCAS_Slider: RscControlsGroupNoScrollbars
 	x = "0.333646 * safezoneW + safezoneX";
 	y = "0.63 * safezoneH + safezoneY";
 	w = "0.331251 * safezoneW";
-	h = "0.0201482 * safezoneH";
+	h = "0.041 * safezoneH";
 	class controls
 	{
 		class Title: RscText
@@ -92,6 +92,20 @@ class RscAttributeCAS_Slider: RscControlsGroupNoScrollbars
 			h = "0.022 * safezoneH";
 			tooltip = "Default 2000m";
 		};
+		//-Speed
+		class Speed_Title: Title
+		{
+			idc = 15149;
+			y = "0.023 * safezoneH";
+		};
+		class Speed_Value: Value
+		{
+			idc = 15150;
+			sliderPosition = 800;
+			sliderRange[] = {300, 800};
+			y = "0.023 * safezoneH";
+			tooltip = "Default 800Km/h";
+		};
 	};
 };
 
@@ -108,7 +122,7 @@ class TWA_CAS_Module: RscDisplayAttributesModuleCAS
 				class CAS: RscAttributeCAS_TWA{};
 			};
 		};
-		class slider: RscAttributeCAS_Slider{};
+		class sliders: RscAttributeCAS_Slider{};
 		class ButtonOK: ButtonOK
 		{
 			x = "0.59 * safezoneW + safezoneX";

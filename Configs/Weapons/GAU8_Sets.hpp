@@ -86,7 +86,8 @@ class Gau8_Auto_Fire_Ext_SoundSet: Gau8_Fire_Base_SoundSet
 {
 	soundShaders[]=
 	{
-		"Gau8_Auto_Fire_Near_SoundShader"/*,
+		"Gau8_Auto_Fire_3rd_SoundShader"/*,
+		"Gau8_Auto_Fire_Near_SoundShader",
 		"Gau8_Auto_Fire_Close_SoundShader",
 		"Gau8_Auto_Fire_Mid_SoundShader",
 		"Gau8_Auto_Fire_Far_SoundShader"*/

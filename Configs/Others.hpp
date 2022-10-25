@@ -243,6 +243,13 @@ class CfgSound3DProcessors
 	};
 	
 	//Gatling Gun
+	class Gatling_WeaponShotInt_3DProcessor
+	{
+		type = "panner";
+		innerRange = 0;
+		range = 5;
+		rangeCurve = "LinearCurve";
+	};
 	class Gatling_WeaponShotEcho_3DProcessor
 	{
 		type="panner";

@@ -9,7 +9,7 @@ class MNG_1st_Shot_SoundSet
 	loop=0;
 	obstructionFactor=0.3;
 	occlusionFactor=0.5;
-	sound3DProcessingType="Gatling_WeaponShotEcho_3DProcessor";
+	sound3DProcessingType="Gatling_WeaponShotInt_3DProcessor";
 	distanceFilter="Gatling_distance_filter";
 	spatial=0;
 	volumeCurve="InverseSquare2Curve";

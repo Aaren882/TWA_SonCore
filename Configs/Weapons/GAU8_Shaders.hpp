@@ -71,19 +71,18 @@ class Gau8_Fire_Near_SoundShader
 	samples[]=
 	{
 		
-		
 		{
 			"MG8\TWA_SonCore\Snd\Weapons\A10\Van\gau8_near",
 			1
 		}
 	};
-	range=1500;
+	range=1000;
 	rangeCurve[]=
 	{
 		{0,0},
 		{20,1},
-		{1499,0.8},
-		{1500,0}
+		{999,0.8},
+		{1000,0}
 	};
 	volume="2*camPos";
 };
@@ -99,14 +98,30 @@ class Gau8_Fire_Close_SoundShader
 		{
 			"MG8\TWA_SonCore\Snd\Weapons\A10\Van\gau8_close_2",
 			1
+		},
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\A10\Van\gau8_close_3",
+			1
+		},
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\A10\Van\gau8_close_4",
+			1
+		},
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\A10\Van\gau8_close_5",
+			1
+		},
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\A10\Van\gau8_close_6",
+			1
 		}
 	};
 	range=2000;
 	rangeCurve[]=
 	{
 		{0,0},
-		{1500,0},
-		{1501,0.8},
+		{1000,0},
+		{1001,0.8},
 		{1800,1},
 		{1999,0.8},
 		{2000,0}
@@ -120,6 +135,10 @@ class Gau8_Fire_Mid_SoundShader
 		
 		{
 			"MG8\TWA_SonCore\Snd\Weapons\A10\Van\gau8_mid",
+			1
+		},
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\A10\Van\gau8_mid2",
 			1
 		}
 	};
@@ -166,6 +185,10 @@ class Gau8_Fire_Hi_Near_SoundShader
 		{
 			"MG8\TWA_SonCore\Snd\Weapons\A10\Van\2sec\gau8_near_2sec",
 			1
+		},
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\A10\Van\2sec\gau8_near_2sec_2",
+			1
 		}
 	};
 	range=2000;
@@ -185,6 +208,10 @@ class Gau8_Fire_Hi_Mid_SoundShader
 		
 		{
 			"MG8\TWA_SonCore\Snd\Weapons\A10\Van\2sec\gau8_close_2sec",
+			1
+		},
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\A10\Van\2sec\gau8_close_2sec_2",
 			1
 		}
 	};
@@ -277,15 +304,38 @@ class Gau8_Auto_Fire_Int_SoundShader
 		{
 			"MG8\TWA_SonCore\Snd\Weapons\A10\Full\GAU8_0m_1",
 			1
-		}
+		}/*,
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\A10\Full\GAU8_0m_2",
+			1
+		}*/
 	};
-	volume=1;
+	volume=0;
 	range=10;
 	rangeCurve[]=
 	{
 		{0,1},
 		{5,0},
 		{10,0}
+	};
+};
+class Gau8_Auto_Fire_3rd_SoundShader: Gau8_Fire_Near_SoundShader
+{
+	samples[]=
+	{
+		
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\A10\Full\GAU8_300m_1",
+			1
+		}
+	};
+	range=300;
+	rangeCurve[]=
+	{
+		{0,0},
+		{20,1},
+		{250,0.8},
+		{300,0}
 	};
 };
 class Gau8_Auto_Fire_Near_SoundShader: Gau8_Fire_Near_SoundShader
@@ -296,7 +346,20 @@ class Gau8_Auto_Fire_Near_SoundShader: Gau8_Fire_Near_SoundShader
 		{
 			"MG8\TWA_SonCore\Snd\Weapons\A10\Full\GAU8_500m_1",
 			1
+		},
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\A10\Full\GAU8_500m_2",
+			1
 		}
+	};
+	range=2000;
+	rangeCurve[]=
+	{
+		{0,0},
+		{250,0},
+		{300,1},
+		{1999,0.8},
+		{2000,0}
 	};
 };
 class Gau8_Auto_Fire_Close_SoundShader: Gau8_Fire_Close_SoundShader
