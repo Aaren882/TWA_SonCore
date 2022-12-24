@@ -1,6 +1,8 @@
 canLock=2;
 dispersion=0.006;
 displayName="GAU-8";
+L_ES_Prefix = "GAU8";
+L_ES_maxPlopp = 4000;
 modes[]=
 {
 	"MG8_autoLo",
@@ -50,18 +52,21 @@ class MG8_autoBase
 class AI_Base: MG8_autoBase
 {
 	displayName = "$STR_A3_Gatling_30mm_Plane_CAS_01_F0";
-	sounds[] = 
+	sounds[]=
 	{
 		"StandardSound"
 	};
+	modes[]=
+	{
+		"LO"
+	};
 	class StandardSound
 	{
-		begin1[] = {"A3\Sounds_F\arsenal\weapons_vehicles\gatling_30mm\30mm_01_burst",5.6234136,1,1500,{25704,32159}};
-		soundBegin[] = {"begin1",1};
+		soundsetshot[]= sound_shot_Lo;
 	};
 	textureType="fullAuto";
-	soundContinuous = 1;
-	soundBurst=0;
+	soundContinuous = 0;
+	soundBurst=1;
 	autoFire = 1;
 	salvo = 2;
 	reloadTime = 0.03;
