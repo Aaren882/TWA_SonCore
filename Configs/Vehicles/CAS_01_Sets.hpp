@@ -96,7 +96,7 @@ class CAS_01_EngineNoise_Ext_SoundSet_Base: JetFX_EngineNoise_Ext_SoundSet_Base
 	{
 		"CAS_01_EngineNoise_Ext_SoundShader_Base"
 	};
-	shape="JetFX_Slow_RearSideClose_shape";
+	shape="A10FX_RearSideClose_shape";
 	volumeCurve="JetFX_EngineExt_Intense_Base_Curve";
 	volumeFactor=0.8;
 };

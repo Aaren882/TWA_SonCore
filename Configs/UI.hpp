@@ -25,6 +25,9 @@ class RscControlsGroup;
 class RscAttributeCAS;
 class RscControlsGroupNoScrollbars;
 
+class RscButtonMenuOK;
+class RscButtonMenuCancel;
+
 class RscDisplayAttributes
 {
 	class Controls
@@ -64,20 +67,20 @@ class RscAttributeCAS_Slider: RscControlsGroupNoScrollbars
 {
 	onSetFocus = "[_this,""RscAttributeCAS_Slider"",'TWA_Function'] call (uinamespace getvariable ""BIS_fnc_initCuratorAttribute"")";
 	idc = 15154;
-	x = "0.333646 * safezoneW + safezoneX";
-	y = "0.63 * safezoneH + safezoneY";
-	w = "0.331251 * safezoneW";
-	h = "0.041 * safezoneH";
+	x = "6.5 * (((safezoneW / safezoneH) min 1.2) / 40) + (safezoneX + (safezoneW - ((safezoneW / safezoneH) min 1.2))/2)";
+	y = "16.1 *((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + (safezoneY + (safezoneH - (((safezoneW / safezoneH) min 1.2) / 1.2))/2)";
+	w = "27 * (((safezoneW / safezoneH) min 1.2) / 40)";
+	h = "2 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 	class controls
 	{
 		class Title: RscText
 		{
 			idc = 15152;
 			text = "";
-			x = "0 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
-			y = "0 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
-			w = "10 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
-			h = "1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+			x = "0";
+			y = "0";
+			w = "10 *(((safezoneW / safezoneH) min 1.2) / 40)";
+			h = "1 *((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 			colorBackground[] = {0,0,0,0.5};
 		};
 		class Value: RscXSliderH
@@ -86,10 +89,10 @@ class RscAttributeCAS_Slider: RscControlsGroupNoScrollbars
 			sliderPosition = 2000;
 			sliderRange[] = {1000, 2000};
 			sliderStep = 1;
-			x = "0.124988 * safezoneW";
-			y = "0 * safezoneH";
-			w = "0.205533 * safezoneW";
-			h = "0.022 * safezoneH";
+			x = "10 *(((safezoneW / safezoneH) min 1.2) / 40)";
+			y = "0";
+			w = "0.210375 * safezoneW";
+			h = "1 *((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 			tooltip = "Default 2000m";
 		};
 		//-Speed
@@ -109,8 +112,12 @@ class RscAttributeCAS_Slider: RscControlsGroupNoScrollbars
 	};
 };
 
-class TWA_CAS_Module: RscDisplayAttributesModuleCAS
+class RscDisplayAttributes_TWA_CAS_Module: RscDisplayAttributesModuleCAS
 {
+	scriptName = "RscDisplayAttributes_TWA_CAS_Module";
+	scriptPath = "TWA_Function";
+	onLoad = "[""onLoad"",_this,""RscDisplayAttributes_TWA_CAS_Module"",'TWA_Function'] call 	(uinamespace getvariable 'BIS_fnc_initDisplay')";
+	onUnload = "[""onUnload"",_this,""RscDisplayAttributes_TWA_CAS_Module"",'TWA_Function'] call 	(uinamespace getvariable 'BIS_fnc_initDisplay')";
 	class Controls: Controls
 	{
 		class Background: Background{};
@@ -123,20 +130,8 @@ class TWA_CAS_Module: RscDisplayAttributesModuleCAS
 			};
 		};
 		class sliders: RscAttributeCAS_Slider{};
-		class ButtonOK: ButtonOK
-		{
-			x = "0.59 * safezoneW + safezoneX";
-			y = "0.61 * safezoneH + safezoneY";
-			w = "0.0749995 * safezoneW";
-			h = "0.0257037 * safezoneH";
-		};
-		class ButtonCancel: ButtonCancel
-		{
-			x = "0.333791 * safezoneW + safezoneX";
-			y = "0.608704 * safezoneH + safezoneY";
-			w = "0.0749995 * safezoneW";
-			h = "0.0257037 * safezoneH";
-		};
+		class ButtonOK: ButtonOK{};
+		class ButtonCancel: ButtonCancel{};
 	};
 };
 class RscShortcutButton;

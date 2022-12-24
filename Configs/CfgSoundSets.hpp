@@ -195,7 +195,7 @@ class JetFX_EngineExt_Distance_Front_SoundSet_Base: JetFX_External_Distance_Base
 	{
 		"JetFX_EngineExt_Distance_Front_SoundShader_Base"
 	};
-	shape="FrontSemispace20";
+	shape="FrontSemispace10";
 	volumeFactor=0.6;
 };
 class JetFX_EngineExt_Side_SoundSet_Base: JetFX_External_Close_Base

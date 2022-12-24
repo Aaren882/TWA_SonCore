@@ -49,6 +49,38 @@ class Skyfire_weapon_shot_soundset: DAR_weapon_shot_soundset
 		"Skyfire_shot_far_distance_soundshader"
 	};
 };
+//-Missile
+class AMH_weapon_shot_soundset: DAR_weapon_shot_soundset
+{
+	SoundShaders[]=
+	{
+		"AMH_shot_close_soundshader",
+		"AMH_shot_close_distance_soundshader",
+		"AMH_shot_medium_distance_soundshader",
+		"AMH_shot_far_distance_soundshader"
+	};
+};
+class AML_weapon_shot_soundset: DAR_weapon_shot_soundset
+{
+	SoundShaders[]=
+	{
+		"AML_shot_close_soundshader",
+		"AML_shot_close_distance_soundshader",
+		"AML_shot_medium_distance_soundshader",
+		"AML_shot_far_distance_soundshader"
+	};
+};
+class HellFire_weapon_shot_soundset: DAR_weapon_shot_soundset
+{
+	SoundShaders[]=
+	{
+		"AML_shot_close_soundshader",
+		"HellFire_shot_close_distance_soundshader",
+		"AML_shot_medium_distance_soundshader",
+		"AML_shot_far_distance_soundshader"
+	};
+};
+
 class Rocket_Tail_soundset: DAR_weapon_shot_soundset
 {
 	soundshaders[]=

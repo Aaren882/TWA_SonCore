@@ -334,6 +334,180 @@ class Skyfire_shot_far_distance_soundshader
 		{2000,0}
 	};
 };
+
+//-Missile
+class AMH_shot_close_soundshader
+{
+	samples[]=
+	{
+		
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\Missiles\AMH_Fire",
+			1
+		},
+		
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\Missiles\AMH_Fire2",
+			1
+		}
+	};
+	volume="5";
+	range=10;
+	rangeCurve[]=
+	{
+		{0,1},
+		{10,0}
+	};
+};
+class AMH_shot_close_distance_soundshader
+{
+	samples[]=
+	{
+		
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\Missiles\AMH_close",
+			1
+		}
+	};
+	volume="3*camPos";
+	range=500;
+	rangeCurve[]=
+	{
+		{0,0},
+		{10,0},
+		{15,1},
+		{400,1},
+		{500,0}
+	};
+};
+class AMH_shot_medium_distance_soundshader
+{
+	samples[]=
+	{
+		
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\Missiles\AM_MId",
+			1
+		}
+	};
+	volume="10*camPos";
+	range=1000;
+	rangecurve[]=
+	{
+		{0,0},
+		{400,0},
+		{500,1},
+		{1000,0}
+	};
+};
+class AMH_shot_far_distance_soundshader
+{
+	samples[]=
+	{
+		
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\Missiles\AM_far",
+			1
+		}
+	};
+	volume="10*camPos";
+	range=2000;
+	rangecurve[]=
+	{
+		{0,0},
+		{500,0},
+		{1000,1},
+		{2000,0}
+	};
+};
+
+//-Air Missile Light
+class AML_shot_close_soundshader
+{
+	samples[]=
+	{
+		
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\Missiles\AML_Fire",
+			1
+		},
+		
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\Missiles\AML_Fire2",
+			1
+		}
+	};
+	volume="2";
+	range=10;
+	rangeCurve[]=
+	{
+		{0,1},
+		{10,0}
+	};
+};
+class AML_shot_close_distance_soundshader
+{
+	samples[]=
+	{
+		
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\Missiles\AML_close",
+			1
+		}
+	};
+	volume="3*camPos";
+	range=500;
+	rangeCurve[]=
+	{
+		{0,0},
+		{10,0},
+		{15,1},
+		{400,1},
+		{500,0}
+	};
+};
+class AML_shot_medium_distance_soundshader
+{
+	samples[]=
+	{
+		
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\Missiles\AM_MId",
+			1
+		}
+	};
+	volume="10*camPos";
+	range=1000;
+	rangecurve[]=
+	{
+		{0,0},
+		{400,0},
+		{500,1},
+		{1000,0}
+	};
+};
+class AML_shot_far_distance_soundshader
+{
+	samples[]=
+	{
+		
+		{
+			"MG8\TWA_SonCore\Snd\Weapons\Missiles\AM_far",
+			1
+		}
+	};
+	volume="10*camPos";
+	range=2000;
+	rangecurve[]=
+	{
+		{0,0},
+		{500,0},
+		{1000,1},
+		{2000,0}
+	};
+};
+
+//-Tail
 class Rocket_Tail_forest_soundshader
 {
 	samples[]=

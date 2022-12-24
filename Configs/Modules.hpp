@@ -1,11 +1,20 @@
-class ModuleCAS_F;
+class Module_F;
+class ModuleCAS_F: Module_F
+{
+	class ModuleDescription;
+};
 //Eden
 class TWA_CAS_Module: ModuleCAS_F
 {
 	author = "Aaren";
-	displayName = "Aaren's CAS Module";
+	displayName = "Aaren CAS Module";
 	function = "TWAF_fnc_CAS";
 	category = "Aaren_Modules";
+	functionPriority = 1;
+	isGlobal = 1;
+	isTriggerActivated = 1;
+	isDisposable = 1;
+	is3DEN = 0;
 	class Arguments
 	{
 		class Type
@@ -157,37 +166,48 @@ class TWA_CAS_Module: ModuleCAS_F
 			};
 		};
 	};
+	class ModuleDescription: ModuleDescription
+	{
+		description = "$STR_A3_CfgVehicles_ModuleCAS_F_ModuleDescription";
+		direction = 0;
+		duplicate = 0;
+		position = 0;
+	};
 };
+
 class ModuleCASGun_F;
 class TWA_CAS_Module_Gun_Lo: ModuleCASGun_F
 {
 	scopeCurator = 2;
+	
 	category = "Aaren_Modules";
-
+	
 	function = "";
-	_generalMacro = "TWA_CAS_Module_Gun";
-	displayName = "Aaren's CAS Module (Gun Lo)";
+	_generalMacro = "TWA_CAS_Module_Gun_Lo";
+	displayName = "Aaren CAS Module (Gun Lo)";
 	icon = "\a3\Modules_F_Curator\Data\portraitCASGun_ca.paa";
 	model = "\a3\Modules_F_Curator\CAS\surfaceGun.p3d";
 	portrait = "\a3\Modules_F_Curator\Data\portraitCASGun_ca.paa";
-	curatorInfoType = "TWA_CAS_Module";
-	curatorCost = 10;
+	curatorInfoType = "RscDisplayAttributes_TWA_CAS_Module";
 	Zeus_CAStype = 0;
 };
 class TWA_CAS_Module_Gun_Hi: TWA_CAS_Module_Gun_Lo
 {
-	displayName = "Aaren's CAS Module (Gun Hi)";
+	displayName = "Aaren CAS Module (Gun Hi)";
+	_generalMacro = "TWA_CAS_Module_Gun_Hi";
 	Zeus_CAStype = 1;
 };
 class TWA_CAS_Module_Rocket: TWA_CAS_Module_Gun_Lo
 {
-	displayName = "Aaren's CAS Module (Rocket)";
+	displayName = "Aaren CAS Module (Rocket)";
+	_generalMacro = "TWA_CAS_Module_Rocket";
 	portrait = "\a3\Modules_F_Curator\Data\portraitCASMissile_ca.paa";
 	Zeus_CAStype = 2;
 };
 class TWA_CAS_Module_RipBomb: TWA_CAS_Module_Gun_Lo
 {
-	displayName = "Aaren's CAS Module (Ripple Bomb)";
+	displayName = "Aaren CAS Module (Ripple Bomb)";
+	_generalMacro = "TWA_CAS_Module_RipBomb";
 	portrait = "\a3\Modules_F_Curator\Data\portraitCASBomb_ca.paa";
 	model = "\a3\Modules_F_Curator\CAS\surfaceGun.p3d";
 	Zeus_CAStype = 3;

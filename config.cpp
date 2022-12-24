@@ -2,7 +2,7 @@ class CfgPatches
 {
 	class TWA_SonCore_C
 	{
-		units[]={};
+		units[]={"TWA_CAS_Module","TWA_CAS_Module_Gun_Lo","TWA_CAS_Module_Gun_Hi","TWA_CAS_Module_Rocket","TWA_CAS_Module_RipBomb"};
 		weapons[]={};
 		requiredVersion=2;
 		requiredAddons[]=
@@ -57,6 +57,12 @@ class CfgSoundSets
 	#include "Configs\CfgSoundSets.hpp"
 };
 
+//Sounds
+class CfgSounds
+{
+	#include "Configs\CfgSounds.hpp"
+};
+
 //Others
 #include "Configs\Others.hpp"
 
@@ -74,7 +80,7 @@ class CfgFactionClasses
 	class Aaren_Modules
 	{
 		displayName = "Aaren's Modules";
-		priority = 10;
-		side = 7;
+		priority = 8;
+		side = 1;
 	};
 };

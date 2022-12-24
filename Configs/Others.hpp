@@ -25,6 +25,11 @@ class CfgSoundShapes
 		innerAngle=140;
 		outerVolume=0.15;
 	};
+	class A10FX_RearSideClose_shape: JetFX_Slow_RearSideClose_shape
+	{
+		innerAngle=90;
+		outerVolume=0.1;
+	};
 	class JetFX_FlyBy_shape
 	{
 		type="cone";
