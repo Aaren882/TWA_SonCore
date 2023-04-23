@@ -141,8 +141,8 @@ class VCN_Debug_Button: RscShortcutButton
 	text = "Aaren's Sound Core - Debug";
 	x = "1 * (((safezoneW / safezoneH) min 1.2) / 40) + (safezoneX)";
 	y = "0.490741 * safezoneH + safezoneY";
-	w = "0.185625 * safezoneW";
-	h = "0.022 * safezoneH";
+	w = "15 * (((safezoneW / safezoneH) min 1.2) / 40)";
+	h = "1 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 	colorText[] = {1,1,1,1};
 	colorBackground[] = {0.180392,0.372549,0.909804,0.8};
 	tooltip = "Fix Aircraft that is not applied";

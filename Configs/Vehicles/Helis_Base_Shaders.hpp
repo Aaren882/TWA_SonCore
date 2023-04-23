@@ -11,7 +11,7 @@ class HeliFX_Alarm_Damage_Ext_SoundShader_Base
 		}
 	};
 	frequency=1;
-	volume="engineOn*camPos*( 1 - ((transmissionDamage factor [0.61, 0.60])*(motorDamage factor [0.61, 0.60])*(rotorDamage factor [0.51, 0.50])))*(rotorSpeed factor [0, 0.001])";
+	volume="engineOn*(CustomSoundController14+1)*camPos*( 1 - ((transmissionDamage factor [0.61, 0.60])*(motorDamage factor [0.61, 0.60])*(rotorDamage factor [0.51, 0.50])))*(rotorSpeed factor [0, 0.001])";
 	range=20;
 };
 class HeliFX_Alarm_RotorLow_Ext_SoundShader_Base: HeliFX_Alarm_Damage_Ext_SoundShader_Base
@@ -25,7 +25,7 @@ class HeliFX_Alarm_RotorLow_Ext_SoundShader_Base: HeliFX_Alarm_Damage_Ext_SoundS
 		}
 	};
 	frequency=1;
-	volume="engineOn*camPos*(rotorSpeed factor [0.9, 0.8999])*(rotorSpeed factor [-0.5, 1])*(speed factor [3, 3.01])";
+	volume="engineOn*(CustomSoundController14+1)*camPos*(rotorSpeed factor [0.9, 0.8999])*(rotorSpeed factor [-0.5, 1])*(speed factor [3, 3.01])";
 };
 
 // -Scrub Sound
@@ -40,7 +40,7 @@ class HeliFX_ScrubTree_Ext_SoundShader_Base: HeliFX_Alarm_Damage_Ext_SoundShader
 		}
 	};
 	frequency=1;
-	volume="camPos*((scrubTree) factor [0, 0.01])";
+	volume="(CustomSoundController14+1)*camPos*((scrubTree) factor [0, 0.01])";
 };
 
 // -Damage
@@ -55,7 +55,7 @@ class HeliFX_TransmissionDamage_Ext_phase1_SoundShader_Base
 		}
 	};
 	frequency="0.66 + rotorspeed / 3";
-	volume="((transmissiondamage factor [0.3, 0.35])*(transmissiondamage factor [0.5, 0.45])*(rotorspeed factor [0.2, 0.5])";
+	volume="(CustomSoundController14+1)*((transmissiondamage factor [0.3, 0.35])*(transmissiondamage factor [0.5, 0.45])*(rotorspeed factor [0.2, 0.5])";
 	range=100;
 };
 class HeliFX_TransmissionDamage_Ext_phase2_SoundShader_Base: HeliFX_TransmissionDamage_Ext_phase1_SoundShader_Base
@@ -68,7 +68,7 @@ class HeliFX_TransmissionDamage_Ext_phase2_SoundShader_Base: HeliFX_Transmission
 			1
 		}
 	};
-	volume="(transmissiondamage factor [0.45, 0.5])*(rotorspeed factor [0.2, 0.5])";
+	volume="(CustomSoundController14+1)*(transmissiondamage factor [0.45, 0.5])*(rotorspeed factor [0.2, 0.5])";
 };
 
 //-SlingLoad
@@ -83,7 +83,7 @@ class HeliFX_SlingLoadDown_Ext_SoundShader_Base
 		}
 	};
 	frequency=1;
-	volume="camPos*(slingLoadActive factor [0,-1])";
+	volume="(CustomSoundController14+1)*camPos*(slingLoadActive factor [0,-1])";
 	range=500;
 };
 class HeliFX_SlingLoadUp_Ext_SoundShader_Base: HeliFX_SlingLoadDown_Ext_SoundShader_Base
@@ -97,7 +97,7 @@ class HeliFX_SlingLoadUp_Ext_SoundShader_Base: HeliFX_SlingLoadDown_Ext_SoundSha
 		}
 	};
 	frequency=1;
-	volume="camPos*(slingLoadActive factor [0,1])";
+	volume="(CustomSoundController14+1)*camPos*(slingLoadActive factor [0,1])";
 };
 //-Noise
 class HeliFX_Rain_Ext_SoundShader_Base
@@ -112,7 +112,7 @@ class HeliFX_Rain_Ext_SoundShader_Base
 	};
 	range=100;
 	frequency=1;
-	volume="camPos*(rain - rotorSpeed/2)*2";
+	volume="(CustomSoundController14+1)*camPos*(rain - rotorSpeed/2)*2";
 	rangecurve[]=
 	{
 		{0,1},
@@ -131,7 +131,7 @@ class HeliFX_Wind_Close_Ext_SoundShader_Base
 		}
 	};
 	frequency="rotorSpeed";
-	volume="camPos*(0 max (rotorSpeed-0.1)*6)";
+	volume="(CustomSoundController14+1)*camPos*(0 max (rotorSpeed-0.1)*6)";
 	range=20;
 	rangecurve[]=
 	{
@@ -151,14 +151,15 @@ class HeliFX_Rotor_Stress_Ext_SoundShader_Base
 	};
 	range=1200;
 	frequency="rotorSpeed";
-	volume="engineOn*camPos*((gmeterZ factor[1.5, 2.5]) + (gmeterZ factor[0.5, -0.5]))";
+	volume="(CustomSoundController14+1)*engineOn*camPos*((gmeterZ factor[1.5, 2.5]) + (gmeterZ factor[0.5, -0.5]))";
 	rangecurve[]=
 	{
 		{0,1},
+		{300,0.8},
 		{1200,0}
 	};
 };
-class HeliFX_RotorNoise_Ext_SoundShader_Base
+class HeliFX_RotorNoiseMid_Ext_SoundShader_Base
 {
 	samples[]=
 	{
@@ -169,7 +170,7 @@ class HeliFX_RotorNoise_Ext_SoundShader_Base
 		}
 	};
 	frequency=1;
-	volume="camPos*(rotorThrust factor [0.7, 0.9])";
+	volume="(CustomSoundController14+1)*camPos*(rotorThrust factor [0.7, 0.9])";
 	range=200;
 	rangecurve[]=
 	{
@@ -177,6 +178,18 @@ class HeliFX_RotorNoise_Ext_SoundShader_Base
 		{150,0.3},
 		{200,0}
 	};
+};
+class HeliFX_RotorNoiseLight_Ext_SoundShader_Base: HeliFX_RotorNoiseMid_Ext_SoundShader_Base
+{
+	samples[]=
+	{
+		
+		{
+			"A3\Sounds_F\vehicles\air\Heli_Light_01\rotor_swist",
+			1
+		}
+	};
+	volume = "(CustomSoundController14+1) * camPos * (rotorThrust factor [0.7, 0.9])";
 };
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -323,6 +336,19 @@ class HeliFX_Wind_Int_SoundShader_Base
 	range=50;
 	frequency=1;
 	volume="(CustomSoundController16+1)*(1-camPos)*(speed factor[5, 60])*(speed factor[5, 60])";
+};
+class HeliFX_WindLateralInt_SoundShader_Base
+{
+	samples[]=
+	{
+		
+		{
+			"A3\Sounds_F\vehicles\air\noises\wind_lateral_open_int",
+			1
+		}
+	};
+	frequency = 1;
+	volume = "(CustomSoundController16+1)*(1-camPos)*lateralMovement*((speed factor [5,40]) + (speed factor [-5,-40]))";
 };
 class HeliFX_GStress_Int_SoundShader_Base: HeliFX_Wind_Int_SoundShader_Base
 {

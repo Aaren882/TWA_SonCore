@@ -13,8 +13,29 @@ class GAU_127mm_YakB_weapon_shot_soundset: MNG_AH_Shot_SoundSet
 	distanceFilter="Heavy_distance_filter";
 };
 
+//Basic definition
+class HeliGAU_Int_Base
+{
+	volumeCurve="InverseSquare2Curve";
+	sound3DProcessingType="Heli_GAU_WeaponShotEcho_3DProcessor";
+	distanceFilter="Heli_GAU_distance_filter";
+	occlusionFactor=0.25;
+	obstructionFactor=0.3;
+	spatial=0;
+	doppler=0;
+	loop=0;
+};
+class HeliGAU_Ext_Base: HeliGAU_Int_Base
+{
+	volumeFactor=1;
+	spatial=1;
+	doppler=1;
+	frequencyRandomizer=0.8;
+	frequencyRandomizerMin=0.2;
+};
+
 //M61
-class M61_Int_Shot_SoundSet
+class M61_Int_Shot_SoundSet: HeliGAU_Int_Base
 {
 	soundShaders[]=
 	{
@@ -22,23 +43,19 @@ class M61_Int_Shot_SoundSet
 	};
 	volumeFactor=1;
 	distanceFilter="HeavyGAU_Int_Shot_filter";
-	doppler=0;
-	loop=0;
 	obstructionFactor=0.1;
 	occlusionFactor=0.4;
 	frequencyRandomizer=0.4;
 	frequencyRandomizerMin=0.2;
 	sound3DProcessingType="HeavyGAU_Int_Shot_3DProcessor";
-	spatial=0;
-	volumeCurve="InverseSquare2Curve";
 };
 class M61_Shot_SoundSet: M61_Int_Shot_SoundSet
 {
 	soundShaders[]=
 	{
 		"M61_Fire_3rd_SoundShader",
+		"M61_Fire_Near_Close_SoundShader"
 		//"M61_Fire_Close_SoundShader",
-		"M61_Fire_Naer_Close_SoundShader"
 	};
 	volumeFactor=1;
 	distanceFilter="HeavyGAU_distance_filter";
@@ -57,6 +74,8 @@ class M61_Shot_Close_SoundSet: M61_Shot_SoundSet
 		"M61_Fire_Close_SoundShader"/*,
 		"M61_Fire_Near_SoundShader"*/
 	};
+	frequencyRandomizer=1.1;
+	//frequencyRandomizerMin=0.3;
 	doppler=0;
 };
 

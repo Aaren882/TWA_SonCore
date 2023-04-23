@@ -32,24 +32,13 @@ class CfgFunctions
 		class Volconller
 		{
 			file="MG8\TWA_SonCore\Volconller\Functions";
-			class Init
-			{
-			};
-			class engine
-			{
-			};
-			class heli
-			{
-			};
-			class plane
-			{
-			};
-			class setVolume
-			{
-			};
-			class debug
-			{
-			};
+			class Init;
+			class engine;
+			class heli;
+			class plane;
+			class setVolume;
+			class debug;
+			class SimHandler;
 		};
 	};
 };

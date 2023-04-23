@@ -232,10 +232,11 @@ class M61_Fire_3rd_SoundShader
 		{10,0},
 		{15,1},
 		{50,1},
+		{199,0.8},
 		{200,0}
 	};
 };
-class M61_Fire_Naer_Close_SoundShader
+class M61_Fire_Near_Close_SoundShader
 {
 	samples[]=
 	{
@@ -266,16 +267,16 @@ class M61_Fire_Close_SoundShader
 	samples[]=
 	{
 		
-		/*{
+		{
 			"MG8\TWA_SonCore\Snd\Weapons\Cannon\M61\f18_500m_01",
 			1
-		},*/
+		},
 		{
 			"MG8\TWA_SonCore\Snd\Weapons\Cannon\M61\f18_500m_02",
 			1
 		}
 	};
-	volume="1.5*camPos";
+	volume="camPos";
 	frequency=1;
 	range=3000;
 	rangeCurve[]=
@@ -283,7 +284,7 @@ class M61_Fire_Close_SoundShader
 		{0,0},
 		{800,0},
 		{801,1},
-		{2999,0.8},
+		{1500,0.8},
 		{3000,0}
 	};
 };

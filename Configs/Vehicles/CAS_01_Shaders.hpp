@@ -2,7 +2,7 @@ class CAS_01_EngineLowExt_Front_SoundShader_Base: JetFX_EngineLowExt_Front_Sound
 {
 	samples[]=
 	{
-		
+
 		{
 			"MG8\TWA_SonCore\Snd\Engine\Plane\CAS_01\Ext\idle_ext_front",
 			1
@@ -22,7 +22,7 @@ class CAS_01_EngineLowExt_Side_SoundShader_Base: JetFX_EngineLowExt_Side_SoundSh
 {
 	samples[]=
 	{
-		
+
 		{
 			"MG8\TWA_SonCore\Snd\Engine\Plane\CAS_01\Ext\idle_ext_side",
 			1
@@ -42,7 +42,7 @@ class CAS_01_EngineLowExt_SoundShader_Base: CAS_01_EngineLowExt_Front_SoundShade
 {
 	samples[]=
 	{
-		
+
 		{
 			"MG8\TWA_SonCore\Snd\Engine\Plane\CAS_01\Ext\idle_low_rear",
 			1
@@ -54,7 +54,7 @@ class CAS_01_EngineLowExt_Distance_SoundShader_Base: JetFX_EngineLowExt_Distance
 {
 	samples[]=
 	{
-		
+
 		{
 			"MG8\TWA_SonCore\Snd\Engine\Plane\CAS_01\Ext\ForsageExt_Low",
 			1
@@ -74,7 +74,7 @@ class CAS_01_IdleExtDis_SoundShader_Base: JetFX_IdleExtDis_SoundShader_Base
 {
 	samples[]=
 	{
-		
+
 		{
 			"MG8\TWA_SonCore\Snd\Engine\Plane\CAS_01\Ext\idle_Distant",
 			1
@@ -97,7 +97,7 @@ class CAS_01_EngineExt_Close_Front_SoundShader_Base: JetFX_EngineExt_Close_Front
 {
 	samples[]=
 	{
-		
+
 		{
 			"MG8\TWA_SonCore\Snd\Engine\Plane\CAS_01\Ext\Engine_Front",
 			1
@@ -117,14 +117,14 @@ class CAS_01_EngineExt_Close_Whine_SoundShader_Base
 {
 	samples[]=
 	{
-		
+
 		{
 			"MG8\TWA_SonCore\Snd\Engine\Plane\CAS_01\Ext\Engine_Whine",
 			1
 		}
 	};
 	frequency="(rpm factor[0, 1])*(speed factor[2, 200])";
-	volume="machcone*(CustomSoundController15+1)*camext*(rpm factor[0, 1])**(speed factor[1, 100])";
+	volume="machcone*(CustomSoundController15+1)*camext*(rpm factor[0, 1])*(speed factor[1, 100])";
 	range=1200;
 	rangeCurve[]=
 	{
@@ -137,7 +137,7 @@ class CAS_01_EngineExt_Distance_Front_SoundShader_Base: JetFX_EngineExt_Distance
 {
 	samples[]=
 	{
-		
+
 		{
 			"MG8\TWA_SonCore\Snd\Engine\Plane\CAS_01\Ext\Dist_front",
 			1
@@ -158,7 +158,7 @@ class CAS_01_EngineExt_Side_SoundShader_Base: JetFX_EngineExt_Side_SoundShader_B
 {
 	samples[]=
 	{
-		
+
 		{
 			"MG8\TWA_SonCore\Snd\Engine\Plane\CAS_01\Ext\Engine_Side",
 			1
@@ -178,7 +178,7 @@ class CAS_01_ForsageExt_SoundShader_Base: JetFX_ForsageExt_SoundShader_Base
 {
 	samples[]=
 	{
-		
+
 		{
 			"MG8\TWA_SonCore\Snd\Engine\Plane\CAS_01\Ext\ForsageExt",
 			1
@@ -198,7 +198,7 @@ class CAS_01_EngineNoise_Ext_SoundShader_Base: JetFX_EngineNoise_Ext_SoundShader
 {
 	samples[]=
 	{
-		
+
 		{
 			"MG8\TWA_SonCore\Snd\Engine\Plane\CAS_01\Ext\Engine_Noise",
 			1
@@ -218,7 +218,7 @@ class CAS_01_ForsageExtDis_SoundShader_Base
 {
 	samples[]=
 	{
-		
+
 		{
 			"MG8\TWA_SonCore\Snd\Engine\Plane\CAS_01\Ext\ForsageExt_Dis",
 			1

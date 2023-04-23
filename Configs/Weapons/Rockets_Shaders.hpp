@@ -199,7 +199,7 @@ class DAR_rocketpods_shot_close_distance_soundshader
 			1
 		}
 	};
-	volume="0.5*camPos";
+	volume="2*camPos";
 	range=500;
 	rangeCurve[]=
 	{

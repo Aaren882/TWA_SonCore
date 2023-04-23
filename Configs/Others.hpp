@@ -271,7 +271,6 @@ class CfgSound3DProcessors
 		innerRange=20;
 		range=3000;
 		rangeCurve="LinearCurve";
-		radius=6;
 	};
 	class HeavyGAU_Int_Shot_3DProcessor: HeavyGAU_WeaponShotEcho_3DProcessor
 	{
@@ -279,6 +278,11 @@ class CfgSound3DProcessors
 		innerRange=8;
 		range=50;
 		rangeCurve="LinearCurve";
+	};
+	
+	class Heli_GAU_WeaponShotEcho_3DProcessor: HeavyGAU_WeaponShotEcho_3DProcessor
+	{
+		innerRange=15;
 	};
 	
 	//Heavy Weapon (Gun Ship etc)
@@ -413,11 +417,11 @@ class cfgDistanceFilters
 	class HeavyGAU_distance_filter
 	{
 		type="lowpassfilter";
-		mincutofffrequency=30;
+		mincutofffrequency=1500;
 		qfactor=1;
-		innerrange=10;
-		range=3000;
-		powerfactor=32;
+		innerrange=100;
+		range=4000;
+		powerfactor=10;
 	};
 	class HeavyGAU_Int_Shot_filter
 	{
@@ -429,19 +433,37 @@ class cfgDistanceFilters
 		powerfactor=10;
 	};
 	
+	//Heli Cannon
+	class Heli_GAU_distance_filter: HeavyGAU_distance_filter
+	{
+		type="lowPassFilter";
+		mincutofffrequency=150;
+		powerfactor=15;
+	};
+	
 	//Heavy Weapon (Gun Ship etc)
 	class Heavy_distance_filter: HeavyGAU_distance_filter
 	{
 		mincutofffrequency=150;
 		innerrange=10;
 		range=1800;
+		powerfactor=32;
 	};
 	
 	//GAU-8
 	class A10_HeavyGAU_distance_filter: HeavyGAU_distance_filter
 	{
+		mincutofffrequency=100;
 		innerrange=100;
 		range=4000;
+		/*
+		type="lowpassfilter";
+		mincutofffrequency=30;
+		qfactor=1;
+		innerrange=10;
+		range=3000;
+		powerfactor=32;
+		*/
 	};
 	/*class A10_HeavyGAU_Int_Shot_filter: HeavyGAU_Int_Shot_filter
 	{

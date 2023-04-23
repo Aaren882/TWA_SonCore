@@ -87,6 +87,7 @@ class HeliFX_Rotor_Stress_Ext_SoundSet_Base: HeliFX_External_Base
 	{
 		"HeliFX_Rotor_Stress_Ext_SoundShader_Base"
 	};
+	volumefactor=1.25;
 };
 class HeliFX_Wind_Close_Ext_SoundSet_Base: HeliFX_External_Base
 {
@@ -96,13 +97,21 @@ class HeliFX_Wind_Close_Ext_SoundSet_Base: HeliFX_External_Base
 	};
 	volumefactor=0.1;
 };
-class HeliFX_RotorNoise_Ext_SoundSet_Base: HeliFX_External_Base
+class HeliFX_RotorNoiseMid_Ext_SoundSet_Base: HeliFX_External_Base
 {
 	soundshaders[]=
 	{
-		"HeliFX_RotorNoise_Ext_SoundShader_Base"
+		"HeliFX_RotorNoiseMid_Ext_SoundShader_Base"
 	};
 	volumefactor=0.05;
+};
+class HeliFX_RotorNoiseLight_Ext_SoundSet_Base: HeliFX_RotorNoiseMid_Ext_SoundSet_Base
+{
+	soundshaders[]=
+	{
+		"HeliFX_RotorNoiseLight_Ext_SoundShader_Base"
+	};
+	volumefactor=0.25;
 };
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -192,6 +201,13 @@ class HeliFX_Wind_Int_SoundSet_Base: HeliFX_Internal_Base
 	soundshaders[] = 
 	{
 		"HeliFX_Wind_Int_SoundShader_Base"
+	};
+};
+class HeliFX_WindLateralInt_SoundSet_Base: HeliFX_Internal_Base
+{
+	soundshaders[] = 
+	{
+		"HeliFX_WindLateralInt_SoundShader_Base"
 	};
 };
 class HeliFX_GStress_Int_SoundSet_Base: HeliFX_Internal_Base
