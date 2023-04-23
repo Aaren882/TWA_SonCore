@@ -2,7 +2,7 @@ canLock=2;
 dispersion=0.006;
 displayName="GAU-8";
 L_ES_Prefix = "GAU8";
-L_ES_maxPlopp = 4000;
+L_ES_maxPlopp = 3000;
 modes[]=
 {
 	"MG8_autoLo",
@@ -132,7 +132,6 @@ class MG8_autoHi: MG8_autoBase
 class MG8_close: AI_Base
 {
 	aiBurstTerminable=1;
-	showToPlayer=0;
 	aiRateOfFire=0.25;
 	aiRateOfFireDistance=400;
 	minRange=1;
