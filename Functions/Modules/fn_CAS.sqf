@@ -96,7 +96,7 @@ _time = time;
 _offset = if (_casType == 3) then {35} else {0};
 
 //WayPoints
-_posATL = _logic modelToWorld _target_offset;
+_posATL = _logic modelToWorldVisual _target_offset;
 _pos =+ _posATL;
 _pos set [2,(_pos # 2) + getTerrainHeightASL _pos];
 _dir = direction _logic;
@@ -154,7 +154,7 @@ if (_casType == 0) then {
 };
 
 //Sound Handler
-_plane setVariable ["Module_CAS_Sound",true];
+_plane setVariable ["Module_CAS_Sound",true,true];
 
 //CM
 {
@@ -197,7 +197,7 @@ _logic setdir _logic_Dir;
 
 	//Update plane with the module
 	if (((getPosATL _logic distance _posATL > 0.01) or (direction _logic != _dir)) and _fireProgress == 0) then {
-		_posATL = _logic modelToWorld _target_offset;
+		_posATL = _logic modelToWorldVisual _target_offset;
 		_pos =+ _posATL;
 		_pos set [2,(_pos # 2) + getTerrainHeightASL _pos];
 		_dir = direction _logic;
@@ -231,7 +231,7 @@ _logic setdir _logic_Dir;
 	_plane setvelocity (velocity _plane);
 
 	//Firing Handler
-	if ((getPosASL _plane) distance _pos < _awayDis and (_this # 20)) then {
+	if (((getPosASL _plane) distance _pos < _awayDis) and (_this # 20)) then {
 		_target = _logic;
 
 		_this set [20, false];
@@ -325,9 +325,7 @@ _logic setdir _logic_Dir;
 		};
 
 		//Sound Handler
-		_plane setVariable ["Module_CAS_Sound",false];
-
-		//waituntil {(_plane distance _pos > 3000) or !(alive driver _plane)};
+		_plane setVariable ["Module_CAS_Sound",false,true];
 
 		[{
 				params ["_plane", "_awayPos"];
