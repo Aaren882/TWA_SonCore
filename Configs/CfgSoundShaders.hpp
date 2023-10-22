@@ -106,7 +106,7 @@ class JetFX_sonicboom_Far_SoundShader
 //Weapons
 #include "Weapons\Rockets_Shaders.hpp"
 #include "Weapons\GAU8_Shaders.hpp"
-#include "Weapons\Getling_Shaders.hpp"
+#include "Weapons\Gatling_Shaders.hpp"
 #include "Weapons\Cannon_Shaders.hpp"
 #include "Weapons\Others_Shaders.hpp"
 #include "Weapons\Gunship\25mm_Shaders.hpp"
@@ -565,6 +565,20 @@ class JetFX_Whine_EngineIntTR_SoundShader_Base: JetFX_Whine_EngineInt_SoundShade
 #include "Vehicles\CAS_01_Shaders.hpp"
 #include "Vehicles\Helis_Base_Shaders.hpp"
 #include "Vehicles\Heli_01_Shaders.hpp"
+#include "Vehicles\AH64_Shaders.hpp"
+#include "Vehicles\Mi24_Shaders.hpp"
+
+class HeliFX_Turbine_Loud_Ext_SoundShader: Heli_01_TR_Turbine_Ext_SoundShader
+{
+	range=800;
+	rangecurve[]=
+	{
+		{0,0.4},
+		{75,1},
+		{600,0.3},
+		{800,0}
+	};
+};
 
 //Environment Noises
 // -External

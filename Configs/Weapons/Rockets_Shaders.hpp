@@ -13,7 +13,7 @@ class DAGR_shot_close_soundshader
 			1
 		}
 	};
-	volume="2";
+	volume="1";
 	range=10;
 	rangeCurve[]=
 	{
@@ -97,7 +97,7 @@ class Hydra_shot_close_soundshader
 			1
 		}
 	};
-	volume="2";
+	volume="1";
 	range=10;
 	rangeCurve[]=
 	{
@@ -136,7 +136,7 @@ class Hydra_shot_medium_distance_soundshader
 			1
 		}
 	};
-	volume="10*camPos";
+	volume="5*camPos";
 	range=1000;
 	rangecurve[]=
 	{
@@ -156,7 +156,7 @@ class Hydra_shot_far_distance_soundshader
 			1
 		}
 	};
-	volume="10*camPos";
+	volume="5*camPos";
 	range=2000;
 	rangecurve[]=
 	{
@@ -181,7 +181,7 @@ class DAR_shot_close_soundshader
 			1
 		}
 	};
-	volume="2";
+	volume="1";
 	range=10;
 	rangeCurve[]=
 	{
@@ -220,7 +220,7 @@ class DAR_shot_medium_distance_soundshader
 			1
 		}
 	};
-	volume="10*camPos";
+	volume="5*camPos";
 	range=1000;
 	rangecurve[]=
 	{
@@ -240,7 +240,7 @@ class DAR_shot_far_distance_soundshader
 			1
 		}
 	};
-	volume="10*camPos";
+	volume="5*camPos";
 	range=2000;
 	rangecurve[]=
 	{
@@ -283,7 +283,7 @@ class Skyfire_rocketpods_shot_close_distance_soundshader
 			1
 		}
 	};
-	volume="5*camPos";
+	volume="2*camPos";
 	range=500;
 	rangeCurve[]=
 	{
@@ -304,7 +304,7 @@ class Skyfire_shot_medium_distance_soundshader
 			1
 		}
 	};
-	volume="10*camPos";
+	volume="5*camPos";
 	range=1000;
 	rangecurve[]=
 	{
@@ -324,7 +324,7 @@ class Skyfire_shot_far_distance_soundshader
 			1
 		}
 	};
-	volume="10*camPos";
+	volume="5*camPos";
 	range=2000;
 	rangecurve[]=
 	{
@@ -390,7 +390,7 @@ class AMH_shot_medium_distance_soundshader
 			1
 		}
 	};
-	volume="10*camPos";
+	volume="5*camPos";
 	range=1000;
 	rangecurve[]=
 	{
@@ -410,7 +410,7 @@ class AMH_shot_far_distance_soundshader
 			1
 		}
 	};
-	volume="10*camPos";
+	volume="5*camPos";
 	range=2000;
 	rangecurve[]=
 	{
@@ -476,7 +476,7 @@ class AML_shot_medium_distance_soundshader
 			1
 		}
 	};
-	volume="10*camPos";
+	volume="5*camPos";
 	range=1000;
 	rangecurve[]=
 	{
@@ -496,7 +496,7 @@ class AML_shot_far_distance_soundshader
 			1
 		}
 	};
-	volume="10*camPos";
+	volume="5*camPos";
 	range=2000;
 	rangecurve[]=
 	{

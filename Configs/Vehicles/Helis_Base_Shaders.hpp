@@ -131,7 +131,7 @@ class HeliFX_Wind_Close_Ext_SoundShader_Base
 		}
 	};
 	frequency="rotorSpeed";
-	volume="(CustomSoundController14+1)*camPos*(0 max (rotorSpeed-0.1)*6)";
+	volume="camPos*(0 max (rotorSpeed-0.1)*6)*(CustomSoundController14+1)";
 	range=20;
 	rangecurve[]=
 	{

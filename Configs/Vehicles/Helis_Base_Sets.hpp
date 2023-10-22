@@ -1,6 +1,6 @@
 class HeliFX_Internal_Base
 {
-	volumefactor=0.5;
+	volumefactor=0.3;
 	spatial=0;
 	loop=1;
 };
@@ -9,7 +9,8 @@ class HeliFX_External_Base
 	sound3dprocessingtype="HeliFX_Close_3DProcessor";
 	distancefilter="HeliFX_Close_Engine_Filter";
 	volumecurve="HeliFX_Ext_Base_Curve";
-	occlusionfactor=0.35;
+	occlusionObstruction = 1;
+	occlusionFactor = 0.3;
 	obstructionfactor=0;
 	volumefactor=1;
 	spatial=1;
@@ -87,7 +88,7 @@ class HeliFX_Rotor_Stress_Ext_SoundSet_Base: HeliFX_External_Base
 	{
 		"HeliFX_Rotor_Stress_Ext_SoundShader_Base"
 	};
-	volumefactor=1.25;
+	volumefactor=0.85;
 };
 class HeliFX_Wind_Close_Ext_SoundSet_Base: HeliFX_External_Base
 {
@@ -95,7 +96,7 @@ class HeliFX_Wind_Close_Ext_SoundSet_Base: HeliFX_External_Base
 	{
 		"HeliFX_Wind_Close_Ext_SoundShader_Base"
 	};
-	volumefactor=0.1;
+	volumefactor=0.15;
 };
 class HeliFX_RotorNoiseMid_Ext_SoundSet_Base: HeliFX_External_Base
 {
@@ -217,14 +218,14 @@ class HeliFX_GStress_Int_SoundSet_Base: HeliFX_Internal_Base
 		"HeliFX_GStress_Int_SoundShader_Base"
 	};
 };
-class HeliFX_GStress_TR_Int_SoundShader_Base: HeliFX_GStress_Int_SoundSet_Base
+class HeliFX_GStress_TR_Int_SoundSet_Base: HeliFX_GStress_Int_SoundSet_Base
 {
 	soundshaders[] = 
 	{
 		"HeliFX_GStress_TR_Int_SoundShader_Base"
 	};
 };
-class HeliFX_GStress_AH_Int_SoundShader_Base: HeliFX_GStress_Int_SoundSet_Base
+class HeliFX_GStress_AH_Int_SoundSet_Base: HeliFX_GStress_Int_SoundSet_Base
 {
 	soundshaders[] = 
 	{

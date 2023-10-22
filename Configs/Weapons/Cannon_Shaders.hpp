@@ -13,6 +13,7 @@ class GAU_30mm_APCH_shot_Int_soundshader
 	rangeCurve[]=
 	{
 		{0,1},
+		{5,0.75},
 		{15,0}
 	};
 };
@@ -33,7 +34,7 @@ class GAU_30mm_APCH_shot_3rd_soundshader
 		{0,0},
 		{10,0},
 		{20,1},
-		{200,0.8},
+		{499,0.8},
 		{500,0}
 	};
 };
@@ -52,8 +53,9 @@ class GAU_30mm_APCH_shot_close_distance_soundshader
 	rangeCurve[]=
 	{
 		{0,0},
-		{200,0},
+		{499,0},
 		{500,1},
+		{999,0.8},
 		{1000,0}
 	};
 };
@@ -72,8 +74,9 @@ class GAU_30mm_APCH_shot_far_distance_soundshader
 	rangeCurve[]=
 	{
 		{0,0},
-		{500,0},
+		{999,0},
 		{1000,1},
+		{1500,0.8},
 		{1800,0}
 	};
 };

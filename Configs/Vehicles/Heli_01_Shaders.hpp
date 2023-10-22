@@ -11,14 +11,14 @@ class Heli_01_TR_Rotor_Distance_SoundShader
 	};
 	frequency="rotorspeed * (1-rotorthrust/15) * 1";
 	volume="(CustomSoundController14+1)*camext*(0 max (rotorspeed-0.1))*(1 + rotorthrust)";
-	range=1800;
+	range=1500;
 	rangecurve[]=
 	{
 		{0,0},
 		{100,0},
 		{600,1},
-		{1300,0.8},
-		{1800,0}
+		{1000,0.15},
+		{1500,0}
 	};
 };
 class Heli_01_TR_Engine_Distance_SoundShader
@@ -31,15 +31,15 @@ class Heli_01_TR_Engine_Distance_SoundShader
 			1
 		}
 	};
-	frequency="rotorspeed * (1-rotorthrust/15) * 1.25";
-	volume="(CustomSoundController14+1)*((rotorspeed-0.72)*4)*camext";
-	range=1800;
+	frequency="1.25*rotorspeed*(1-rotorthrust/15)";
+	volume="camext*((rotorspeed-0.72)*4)*(CustomSoundController14+1)";
+	range=1300;
 	rangecurve[]=
 	{
 		{0,0},
 		{300,1},
-		{1300,0.8},
-		{1800,0}
+		{1200,0.2},
+		{1300,0}
 	};
 };
 class Heli_01_TR_EngineExt_SoundShader
@@ -52,8 +52,8 @@ class Heli_01_TR_EngineExt_SoundShader
 			1
 		}
 	};
-	frequency="rotorSpeed";
-	volume="(CustomSoundController14+1)*camext*rotorSpeed";
+	frequency="rotorSpeed*(1+rotorThrust/6)";
+	volume="camext*(rotorSpeed factor [0.3, 1])*(CustomSoundController14+1)";
 	range=1000;
 	rangecurve[]=
 	{
@@ -73,8 +73,8 @@ class Heli_01_TR_RotorExt_SoundShader: Heli_01_TR_EngineExt_SoundShader
 			1
 		}
 	};
-	frequency="(rotorSpeed factor [0.3, 0.7])*(rotorSpeed factor [0.3, 1])*(1 - rotorThrust/10)";
-	volume="(CustomSoundController14+1)*camext*(rotorSpeed factor [0.3, 1])";
+	frequency="(rotorSpeed factor [0.3, 0.7])*(1 - rotorThrust/10)";
+	volume="camext*(rotorSpeed factor [0.3, 1])*(1 + rotorThrust)*(CustomSoundController14+1)";
 	range=1200;
 	rangecurve[]=
 	{
@@ -105,6 +105,7 @@ class Heli_01_TR_Turbine_Ext_SoundShader
 		{200,0}
 	};
 };
+
 class Heli_01_TR_TailRotor_SoundShader
 {
 	samples[]=
@@ -116,7 +117,7 @@ class Heli_01_TR_TailRotor_SoundShader
 		}
 	};
 	frequency="rotorspeed * (1-rotorthrust/15) * 1.25";
-	volume="(CustomSoundController14+1)*camext*0.25*(0 max (rotorspeed-0.5))";
+	volume="camext*0.25*(0 max (rotorspeed-0.5))*(1 + rotorthrust)*(CustomSoundController14+1)";
 	range=150;
 };
 

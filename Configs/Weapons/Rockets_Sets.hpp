@@ -7,7 +7,7 @@ class DAR_weapon_shot_soundset
 		"DAR_shot_medium_distance_soundshader",
 		"DAR_shot_far_distance_soundshader"
 	};
-	volumeFactor=1.5;
+	volumeFactor=1;
 	volumecurve="Rockets_Fire_Weapons_volumecurve";
 	sound3dprocessingtype="VFX_weapons_tails_3dprocessor";
 	distancefilter="Rockets_Fire_weapons_lowpass_filter";
@@ -16,6 +16,7 @@ class DAR_weapon_shot_soundset
 	spatial=1;
 	doppler=0;
 	loop=0;
+	frequencyRandomizerMin=0.2;
 	frequencyrandomizer=0.5;
 };
 class DAGR_weapon_shot_soundset: DAR_weapon_shot_soundset

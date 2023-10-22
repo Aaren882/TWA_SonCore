@@ -49,7 +49,7 @@ class Int_gForce_Wind_SoundSet: Int_gForce_SoundSet
 //Weapons
 #include "Weapons\Rockets_Sets.hpp"
 #include "Weapons\GAU8_Sets.hpp"
-#include "Weapons\Getling_Sets.hpp"
+#include "Weapons\Gatling_Sets.hpp"
 #include "Weapons\Cannon_Sets.hpp"
 #include "Weapons\Others_Sets.hpp"
 #include "Weapons\Gunship\25mm_Sets.hpp"
@@ -71,7 +71,8 @@ class JetFX_External_Base
 	volumeFactor=1;
 	spatial=1;
 	loop=1;
-	occlusionFactor=0.5;
+	occlusionObstruction = 1;
+	occlusionFactor = 0.3;
 	obstructionFactor=0;
 };
 
@@ -330,6 +331,21 @@ class JetFX_Whine_EngineIntTR_SoundSet_Base: JetFX_Whine_EngineInt_SoundSet_Base
 #include "Vehicles\CAS_01_Sets.hpp"
 #include "Vehicles\Helis_Base_Sets.hpp"
 #include "Vehicles\Heli_01_Sets.hpp"
+#include "Vehicles\AH64_Sets.hpp"
+#include "Vehicles\Mi24_Sets.hpp"
+
+class HeliFX_Turbine_Loud_Ext_SoundSet: Heli_01_TR_Turbine_Ext_SoundSet
+{
+	soundShaders[]=
+	{
+		"HeliFX_Turbine_Loud_Ext_SoundShader"
+	};
+};
+
+class HeliFX_Turbine_Quiet_Ext_SoundSet: Heli_01_TR_Turbine_Ext_SoundSet
+{
+	volumeFactor=0.3;
+};
 
 //Environment Noises
 class JetFX_scrubLandInt_SoundSet_Base: JetFX_Internal_Base

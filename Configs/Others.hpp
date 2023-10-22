@@ -74,6 +74,14 @@ class CfgSoundShapes
 		innerangle=70;
 		outerangle=120;
 	};
+	
+	//-Close Round
+	class HeliFX_Round_Shape: JetFX_RearSide_shape
+	{
+		outervolume=0.75;
+		innerangle=130;
+		outerangle=310;
+	};
 };
 //-SoundCurves
 class CfgSoundCurves
@@ -220,6 +228,7 @@ class CfgSound3DProcessors
 	};
 	class JetFX_Distant_3DProcessingType: JetFX_Close_3DProcessingType
 	{
+		type="panner";
 		innerRange=3000;
 	};
 	class JetFX_Forsage_Close_3DProcessingType: JetFX_Close_3DProcessingType
@@ -231,14 +240,14 @@ class CfgSound3DProcessors
 	//Heli
 	class HeliFX_Close_3DProcessor: JetFX_Close_3DProcessingType
 	{
-		innerRange=0;
-		range=800;
+		innerRange=50;
+		range=300;
 	};
 	
 	class HeliFX_Distant_3DProcessor: HeliFX_Close_3DProcessor
 	{
-		innerrange = 2000;
-		range = 3000;
+		innerrange = 100;
+		range = 800;
 	};
 	class HeliFX_TailRotor_3DProcessor: HeliFX_Close_3DProcessor
 	{
@@ -259,12 +268,12 @@ class CfgSound3DProcessors
 	{
 		type="panner";
 		innerRange=20;
-		range=1500;
+		range=150;
 		rangeCurve="LinearCurve";
 		radius=10;
 	};
 	
-	//Common Uses
+	//Common Used
 	class HeavyGAU_WeaponShotEcho_3DProcessor
 	{
 		type="panner";
@@ -313,7 +322,7 @@ class CfgSound3DProcessors
 	{
 		type="panner";
 		innerrange=1;
-		range=500;
+		range=100;
 		rangecurve="VFX_weapons_processorcurve";
 	};
 	class VFX_weapons_tails_3dprocessor
@@ -421,7 +430,7 @@ class cfgDistanceFilters
 		qfactor=1;
 		innerrange=100;
 		range=4000;
-		powerfactor=10;
+		powerfactor=5;
 	};
 	class HeavyGAU_Int_Shot_filter
 	{

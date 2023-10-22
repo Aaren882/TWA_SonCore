@@ -16,20 +16,22 @@ class GAU_127mm_YakB_weapon_shot_soundset: MNG_AH_Shot_SoundSet
 //Basic definition
 class HeliGAU_Int_Base
 {
+	volumeFactor=1;
 	volumeCurve="InverseSquare2Curve";
-	sound3DProcessingType="Heli_GAU_WeaponShotEcho_3DProcessor";
-	distanceFilter="Heli_GAU_distance_filter";
-	occlusionFactor=0.25;
-	obstructionFactor=0.3;
+	sound3DProcessingType="HeavyGAU_Int_Shot_3DProcessor";
+	distanceFilter="HeavyGAU_Int_Shot_filter";
 	spatial=0;
 	doppler=0;
 	loop=0;
 };
 class HeliGAU_Ext_Base: HeliGAU_Int_Base
 {
-	volumeFactor=1;
+	sound3DProcessingType="Heli_GAU_WeaponShotEcho_3DProcessor";
+	distanceFilter="Heli_GAU_distance_filter";
 	spatial=1;
 	doppler=1;
+	occlusionFactor=0.25;
+	obstructionFactor=0.3;
 	frequencyRandomizer=0.8;
 	frequencyRandomizerMin=0.2;
 };
@@ -100,27 +102,29 @@ class Gsh_Shot_SoundSet: M61_Shot_SoundSet
 };
 
 //AH64
-class GAU_30mm_APCH_shot_Int_SoundSet: Gsh_Int_Shot_SoundSet
+class GAU_30mm_APCH_shot_Int_SoundSet: HeliGAU_Int_Base
 {
 	SoundShaders[]=
 	{
 		"GAU_30mm_APCH_shot_Int_soundshader"
 	};
+	volumeFactor=3;
+	frequencyRandomizer=0.8;
+	frequencyRandomizerMin=0.2;
 };
-class GAU_30mm_APCH_weapon_shot_soundset: Gsh_Shot_SoundSet
+class GAU_30mm_APCH_weapon_shot_soundset: HeliGAU_Ext_Base
 {
 	SoundShaders[]=
 	{
-		"GAU_30mm_APCH_shot_Int_soundshader",
 		"GAU_30mm_APCH_shot_3rd_soundshader",
 		"GAU_30mm_APCH_shot_close_distance_soundshader",
 		"GAU_30mm_APCH_shot_far_distance_soundshader"
 	};
-	volumeFactor=2;
+	volumeFactor=0.75;
 	sound3DProcessingType="Heavy_WeaponShotEcho_3DProcessor";
 	distanceFilter="Heavy_distance_filter";
 	occlusionFactor=0.25;
-	frequencyrandomizer=2.5;
+	frequencyrandomizer=1.2;
 };
 
 //25mm
