@@ -24,7 +24,7 @@ class Heli_AH64_AH_EngineExt_SoundSet: Heli_01_TR_EngineExt_SoundSet
 		"Heli_AH64_AH_EngineExt_SoundShader"
 	};
 	shape="HeliFX_Rear_Shape";
-	volumeFactor=0.8;
+	volumeFactor=1;
 };
 class Heli_AH64_AH_RotorExt_SoundSet: Heli_01_TR_RotorExt_SoundSet
 {
@@ -32,5 +32,9 @@ class Heli_AH64_AH_RotorExt_SoundSet: Heli_01_TR_RotorExt_SoundSet
 	{
 		"Heli_AH64_AH_RotorExt_SoundShader"
 	};
-	volumeFactor=0.75;
+	volumeFactor=0.5;
+};
+class Heli_AH64_AH_Rotor_Stress_SoundSet: HeliFX_Rotor_Stress_Ext_SoundSet_Base
+{
+	volumeFactor=0.5;
 };
