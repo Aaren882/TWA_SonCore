@@ -68,6 +68,13 @@ class CfgSoundShapes
 		innerangle=150;
 		outerangle=230;
 	};
+	class HeliFX_Rear_Shape: HeliFX_Front_Shape
+	{
+		outervolume=0.65;
+		innerangle=240;
+		outerangle=120;
+		azimuth=180;
+	};
 	class HeliFX_TailRotor_Shape: HeliFX_Turbine_Shape
 	{
 		outervolume=0.5;

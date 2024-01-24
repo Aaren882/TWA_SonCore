@@ -25,6 +25,7 @@ class Heli_01_TR_EngineExt_SoundSet: HeliFX_External_Base
 		"Heli_01_TR_EngineExt_SoundShader"
 	};
 	volumeFactor=0.4;
+	shape="HeliFX_Rear_Shape";
 };
 class Heli_01_TR_RotorExt_SoundSet: HeliFX_External_Base
 {
