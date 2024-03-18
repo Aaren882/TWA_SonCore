@@ -73,7 +73,7 @@ class JetFX_External_Base
 	loop=1;
 	occlusionObstruction = 1;
 	occlusionFactor = 0.3;
-	obstructionFactor=0;
+	obstructionFactor=0.2;
 };
 
 class JetFX_External_Close_Base: JetFX_External_Base
@@ -82,7 +82,6 @@ class JetFX_External_Close_Base: JetFX_External_Base
 	sound3DProcessingType="JetFX_Close_3DProcessingType";
 	distanceFilter="JetFX_Close_Engine_Filter";
 	occlusionFactor=0.45;
-	obstructionFactor=0.2;
 };
 class JetFX_External_Distance_Base: JetFX_External_Close_Base
 {
@@ -139,7 +138,6 @@ class JetFX_IdleExtDis_SoundSet_Base: JetFX_External_Close_Base
 		"JetFX_IdleExtDis_SoundShader_Base"
 	};
 	volumeFactor=0.8;
-	sound3DProcessingType="JetFX_Close_Emitter_3DProcessingType";
 	volumeCurve="JetFX_EngineLow_Base_Curve";
 };
 class JetFX_EngineExt_Close_Whine_SoundSet_Base: JetFX_External_Close_Base
@@ -196,6 +194,7 @@ class JetFX_EngineExt_Distance_Front_SoundSet_Base: JetFX_External_Distance_Base
 	{
 		"JetFX_EngineExt_Distance_Front_SoundShader_Base"
 	};
+	volumeCurve="JetFX_DistantFront_EngineExt_Base_Curve";
 	shape="FrontSemispace10";
 	volumeFactor=0.6;
 };

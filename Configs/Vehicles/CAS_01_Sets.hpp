@@ -38,7 +38,7 @@ class CAS_01_IdleExtDis_SoundSet_Base: JetFX_IdleExtDis_SoundSet_Base
 		"CAS_01_IdleExtDis_SoundShader_Base"
 	};
 	volumeFactor=0.8;
-	sound3DProcessingType="JetFX_Close_Emitter_3DProcessingType";
+	sound3DProcessingType="JetExt_Close_3DProcessingType";
 	volumeCurve="JetFX_EngineLow_Base_Curve";
 };
 ////////////////////////////////////////////

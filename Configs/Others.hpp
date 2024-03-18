@@ -18,7 +18,7 @@ class CfgSoundShapes
 	class JetFX_RearSideClose_shape: JetFX_RearSide_shape
 	{
 		innerAngle=30;
-		outerVolume=0.05;
+		outerVolume=0.3;
 	};
 	class JetFX_Slow_RearSideClose_shape: JetFX_RearSideClose_shape
 	{
@@ -34,7 +34,7 @@ class CfgSoundShapes
 	{
 		type="cone";
 		innerVolume=1.0;
-		outerVolume=0.01;
+		outerVolume=0.35;
 		innerAngle=85;
 		outerAngle=120;
 		azimuth=0;
@@ -109,8 +109,10 @@ class CfgSoundCurves
 	{
 		points[]=
 		{
-			{0.0,0.4},
-			{0.8,1.0},
+			{0.0,1.0},
+			{0.3,0.65},
+			{0.5,0.1},
+			{0.8,0.01},
 			{1.0,0.0}
 		};
 	};
@@ -119,8 +121,26 @@ class CfgSoundCurves
 		points[]=
 		{
 			{0.0,1.0},
-			{0.4,0.9},
-			{0.8,0.6},
+			{0.3,0.9},
+			{0.5,0.75},
+			{0.7,0.5},
+			{0.8,0.2},
+			{0.9,0.1},
+			{1.0,0.0}
+		};
+	};
+	class JetFX_DistantFront_EngineExt_Base_Curve
+	{
+		points[]=
+		{
+			{0.0,1.0},
+			{0.2,0.9},
+			{0.3,0.751},
+			{0.4,0.55},
+			{0.5,0.31},
+			{0.6,0.125},
+			{0.7,0.085},
+			{0.8,0.01},
 			{1.0,0.0}
 		};
 	};
@@ -147,6 +167,136 @@ class CfgSoundCurves
 			{0.0,2.0},
 			{0.8,0.8},
 			{1.0,0.0}
+		};
+	};
+	
+	//-A-10
+	class A10_HeavyCannonShot_Curve
+	{
+		points[]=
+		{
+			{0,1},
+			{0.1,0.93},
+			{0.2,0.7},
+			{0.3,0.5},
+			{0.4,0.2},
+			{0.5,0.1},
+			{0.6,0.08},
+			{0.7,0.058},
+			{0.8,0.02},
+			{0.9,0.01},
+			{1,0}
+		};
+	};
+	
+	//Cannon
+	class HeliFX_CannonShotCurve
+	{
+		points[]=
+		{
+			{0,1},
+			{0.1,0.6502},
+			{0.3,0.5309},
+			{0.4,0.4569},
+			{0.5,0.452},
+			{0.6,0.383},
+			{0.7,0.2695},
+			{0.8,0.1426},
+			{0.9,0.102},
+			{1,0.0041}
+		};
+	};
+	class HeliFX_CannonShotTailCurve
+	{
+		points[]=
+		{
+			{0,1},
+			{0.05,0.715},
+			{0.1,0.7194},
+			{0.15,0.6015},
+			{0.2,0.525},
+			{0.25,0.4725},
+			{0.3,0.335},
+			{0.35,0.2072},
+			{0.4,0.1861},
+			{0.45,0.0697},
+			{0.5,0.0566},
+			{0.6,0.0375},
+			{0.7,0.0244},
+			{0.8,0.015},
+			{0.9,0.0081},
+			{1,0}
+		};
+	};
+	
+	//- Heavy Cannons
+	class VFX_HeavyCannonShot_Curve
+	{
+		points[]=
+		{
+			{0,1},
+			{0.1,0.85},
+			{0.2,0.7},
+			{0.3,0.6},
+			{0.4,0.4},
+			{0.5,0.215},
+			{0.6,0.11},
+			{0.7,0.075},
+			{0.8,0.025},
+			{0.9,0.01},
+			{1,0}
+		};
+	};
+	class VFX_HeavyCannonTail_Curve
+	{
+		points[]=
+		{
+			{0,1},
+			{0.1,0.9},
+			{0.2,0.75},
+			{0.3,0.68},
+			{0.4,0.45},
+			{0.5,0.31},
+			{0.6,0.11},
+			{0.7,0.075},
+			{0.8,0.025},
+			{0.9,0.01},
+			{1,0}
+		};
+	};
+	
+	class VFX_LightCannonShot_Curve
+	{
+		points[]=
+		{
+			{0,1},
+			{0.1,0.75},
+			{0.2,0.7},
+			{0.3,0.4},
+			{0.4,0.2},
+			{0.5,0.115},
+			{0.6,0.11},
+			{0.7,0.075},
+			{0.8,0.025},
+			{0.9,0.01},
+			{1,0}
+		};
+	};
+	class VFX_LightCannonTail_Curve
+	{
+		points[]=
+		{
+			{0,0.75},
+			{0.1,0.5},
+			{0.2,0.312},
+			{0.3,0.2},
+			{0.4,0.12},
+			{0.5,0.015},
+			{0.6,0.01},
+			{0.7,0.075},
+			{0.8,0.025},
+			{0.9,0.01},
+			{1,0}
 		};
 	};
 	
@@ -220,8 +370,8 @@ class CfgSound3DProcessors
 	class JetFX_SonicBoom_3DProcessingType
 	{
 		type="panner";
-		innerRange=5000;
-		range=5000;
+		innerRange=0;
+		range=100;
 		rangeCurve="Smooth1Curve";
 	};
 	
@@ -229,19 +379,18 @@ class CfgSound3DProcessors
 	class JetFX_Close_3DProcessingType
 	{
 		type="panner";
-		innerRange=1200;
-		range=4000;
+		innerRange=10;
+		range=100;
 		rangeCurve="Smooth1Curve";
 	};
 	class JetFX_Distant_3DProcessingType: JetFX_Close_3DProcessingType
 	{
-		type="panner";
-		innerRange=3000;
+		innerRange=100;
 	};
 	class JetFX_Forsage_Close_3DProcessingType: JetFX_Close_3DProcessingType
 	{
 		innerRange=0;
-		range=1000;
+		range=800;
 	};
 	
 	//Heli
@@ -285,8 +434,8 @@ class CfgSound3DProcessors
 	{
 		type="panner";
 		innerRange=20;
-		range=3000;
-		rangeCurve="LinearCurve";
+		range=100;
+		rangeCurve="HeliFX_CannonShotCurve";
 	};
 	class HeavyGAU_Int_Shot_3DProcessor: HeavyGAU_WeaponShotEcho_3DProcessor
 	{
@@ -304,17 +453,23 @@ class CfgSound3DProcessors
 	//Heavy Weapon (Gun Ship etc)
 	class Heavy_WeaponShotEcho_3DProcessor: HeavyGAU_WeaponShotEcho_3DProcessor
 	{
-		range=1500;
+		innerRange=0;
+		range=150;
+		rangeCurve="VFX_HeavyCannonShot_Curve";
+	};
+	class Light_WeaponShotEcho_3DProcessor: Heavy_WeaponShotEcho_3DProcessor
+	{
+		range=5;
+		rangeCurve="VFX_LightCannonShot_Curve";
 	};
 	
 	//GAU-8
 	class A10_HeavyGAU_WeaponShotEcho_3DProcessor
 	{
 		type="panner";
-		innerRange=100;
-		range=4000;
-		rangeCurve="LinearCurve";
-		radius=6;
+		innerRange=10;
+		range=300;
+		//rangeCurve="A10_HeavyCannonShot_Curve";
 	};
 	class A10_HeavyGAU_Int_Shot_3DProcessor
 	{
@@ -367,16 +522,16 @@ class cfgDistanceFilters
 		mincutofffrequency=400;
 		qfactor=1.0;
 		innerrange=100;
-		range=1200;
+		range=1500;
 		powerfactor=5;
 	};
 	class JetFX_FlyBy_Engine_Filter
 	{
 		type="lowpassfilter";
 		mincutofffrequency=800;
-		qfactor=1.0;
-		innerrange=100;
-		range=10000;
+		qfactor=0.8;
+		innerrange=5;
+		range=800;
 		powerfactor=43;
 	};
 	class JetFX_Distant_Engine_Filter: JetFX_Close_Engine_Filter
@@ -433,11 +588,11 @@ class cfgDistanceFilters
 	class HeavyGAU_distance_filter
 	{
 		type="lowpassfilter";
-		mincutofffrequency=1500;
-		qfactor=1;
-		innerrange=100;
-		range=4000;
-		powerfactor=5;
+		mincutofffrequency=150;
+		qfactor=0.5;
+		innerrange=600;
+		range=3000;
+		powerfactor=15;
 	};
 	class HeavyGAU_Int_Shot_filter
 	{
@@ -461,17 +616,23 @@ class cfgDistanceFilters
 	class Heavy_distance_filter: HeavyGAU_distance_filter
 	{
 		mincutofffrequency=150;
-		innerrange=10;
-		range=1800;
-		powerfactor=32;
+		innerrange=0;
+		range=3000;
+		powerfactor=30;
+	};
+	
+	//-CRAM
+	class CRAM_distance_filter: Heavy_distance_filter
+	{
+		innerrange=3000;
 	};
 	
 	//GAU-8
 	class A10_HeavyGAU_distance_filter: HeavyGAU_distance_filter
 	{
 		mincutofffrequency=100;
-		innerrange=100;
-		range=4000;
+		innerrange=1000;
+		range=5000;
 		/*
 		type="lowpassfilter";
 		mincutofffrequency=30;

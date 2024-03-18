@@ -84,7 +84,7 @@ class Gau8_Fire_Near_SoundShader
 		{999,0.8},
 		{1000,0}
 	};
-	volume="2*camPos";
+	volume="camPos";
 };
 class Gau8_Fire_Close_SoundShader
 {
@@ -126,7 +126,7 @@ class Gau8_Fire_Close_SoundShader
 		{1999,0.8},
 		{2000,0}
 	};
-	volume="2*camPos";
+	volume="camPos";
 };
 class Gau8_Fire_Mid_SoundShader
 {
@@ -152,7 +152,7 @@ class Gau8_Fire_Mid_SoundShader
 		{2999,0.8},
 		{3000,0}
 	};
-	volume="2*camPos";
+	volume="camPos";
 };
 class Gau8_Fire_far_SoundShader
 {
@@ -173,7 +173,7 @@ class Gau8_Fire_far_SoundShader
 		{3500,1},
 		{4000,0}
 	};
-	volume="4*camPos";
+	volume="camPos";
 };
 //Hi
 class Gau8_Fire_Hi_Near_SoundShader
@@ -199,7 +199,7 @@ class Gau8_Fire_Hi_Near_SoundShader
 		{1999,0.8},
 		{2000,0}
 	};
-	volume="2*camPos";
+	volume="camPos";
 };
 class Gau8_Fire_Hi_Mid_SoundShader
 {
@@ -225,7 +225,7 @@ class Gau8_Fire_Hi_Mid_SoundShader
 		{2999,0.8},
 		{3000,0}
 	};
-	volume="2*camPos";
+	volume="camPos";
 };
 class Gau8_Fire_Hi_Far_SoundShader
 {
@@ -246,7 +246,7 @@ class Gau8_Fire_Hi_Far_SoundShader
 		{3500,0.8},
 		{4000,0}
 	};
-	volume="2*camPos";
+	volume="camPos";
 };
 
 //JSRS 1.4
@@ -393,5 +393,63 @@ class Gau8_Auto_Fire_Far_SoundShader: Gau8_Fire_far_SoundShader
 			"MG8\TWA_SonCore\Snd\Weapons\A10\Full\GAU8_4000m_1",
 			1
 		}
+	};
+};
+
+class Autocannon30mmBody_tailDistant_SoundShader;
+class Autocannon30mmBody_tailForest_SoundShader;
+class Autocannon30mmBody_tailHouses_SoundShader;
+class Autocannon30mmBody_tailMeadows_SoundShader;
+class Autocannon30mmBody_tailTrees_SoundShader;
+class Gau8_tailDistant_SoundShader: Autocannon30mmBody_tailDistant_SoundShader
+{
+	range=4000;
+	rangeCurve[]=
+	{
+		{0,0},
+		{20,1},
+		{600,1},
+		{4000,1}
+	};
+};
+class Gau8_tailForest_SoundShader: Autocannon30mmBody_tailForest_SoundShader
+{
+	range=4000;
+	rangeCurve[]=
+	{
+		{0,0},
+		{20,1},
+		{4000,0.3}
+	};
+};
+class Gau8_tailHouses_SoundShader: Autocannon30mmBody_tailHouses_SoundShader
+{
+	range=4000;
+	rangeCurve[]=
+	{
+		{0,0},
+		{20,1},
+		{200,0.3},
+		{4000,0.3}
+	};
+};
+class Gau8_tailMeadows_SoundShader: Autocannon30mmBody_tailMeadows_SoundShader
+{
+	range=4000;
+	rangeCurve[]=
+	{
+		{0,0},
+		{20,1},
+		{4000,0.3}
+	};
+};
+class Gau8_tailTrees_SoundShader: Autocannon30mmBody_tailTrees_SoundShader
+{
+	range=4000;
+	rangeCurve[]=
+	{
+		{0,0},
+		{20,1},
+		{4000,0.3}
 	};
 };

@@ -23,16 +23,21 @@ class Gau8_Fire_Hi_Int_SoundSet: Gau8_Fire_Lo_Int_SoundSet
 };
 class Gau8_Fire_Base_SoundSet
 {
-	distanceFilter="A10_HeavyGAU_distance_filter";
-	doppler=1;
-	loop=0;
 	obstructionFactor=0.3;
 	occlusionFactor=0.5;
-	sound3DProcessingType="A10_HeavyGAU_WeaponShotEcho_3DProcessor";
+	occlusionObstruction = 1;
+	
 	spatial=1;
-	volumeCurve="InverseSquare2Curve";
-	volumeFactor=1;
+	doppler=1;
+	loop=0;
+	
+	volumeCurve="A10_HeavyCannonShot_Curve";
+	sound3DProcessingType="A10_HeavyGAU_WeaponShotEcho_3DProcessor";
+	distanceFilter="A10_HeavyGAU_distance_filter";
+	
+	volumeFactor=2;
 };
+	
 class Gau8_Fire_Lo_SoundSet: Gau8_Fire_Base_SoundSet
 {
 	soundShaders[]=
@@ -94,4 +99,20 @@ class Gau8_Auto_Fire_Ext_SoundSet: Gau8_Fire_Base_SoundSet
 	};
 	frequencyRandomizer=0.8;
 	frequencyRandomizerMin=0.3;
+};
+
+class Gau8_tail_SoundSet: Gau8_Fire_Base_SoundSet
+{
+	soundShaders[]=
+	{
+		"Gau8_tailDistant_SoundShader",
+		"Gau8_tailForest_SoundShader",
+		"Gau8_tailHouses_SoundShader",
+		"Gau8_tailMeadows_SoundShader",
+		"Gau8_tailTrees_SoundShader"
+	};
+	volumeFactor=1;
+	volumeCurve="VFX_HeavyCannonTail_Curve";
+	occlusionFactor=0.3;
+	frequencyRandomizerMin=0.1;
 };

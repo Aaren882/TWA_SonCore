@@ -27,14 +27,14 @@ class GAU_30mm_APCH_shot_3rd_soundshader
 			1
 		}
 	};
-	volume="2*CamPos";
+	volume="CamPos";
 	range=500;
 	rangeCurve[]=
 	{
 		{0,0},
 		{10,0},
 		{20,1},
-		{499,0.8},
+		{499,1},
 		{500,0}
 	};
 };
@@ -48,15 +48,16 @@ class GAU_30mm_APCH_shot_close_distance_soundshader
 			1
 		}
 	};
-	volume="camPos";
-	range=1000;
+	volume="1.4 * camPos";
+	range=1500;
 	rangeCurve[]=
 	{
 		{0,0},
-		{499,0},
+		{10,0},
+		{70,0.5},
 		{500,1},
-		{999,0.8},
-		{1000,0}
+		{999,1},
+		{1500,0}
 	};
 };
 class GAU_30mm_APCH_shot_far_distance_soundshader
@@ -76,8 +77,7 @@ class GAU_30mm_APCH_shot_far_distance_soundshader
 		{0,0},
 		{999,0},
 		{1000,1},
-		{1500,0.8},
-		{1800,0}
+		{1800,1}
 	};
 };
 
@@ -529,7 +529,69 @@ class GAU_25mm_Fire_Near_SoundShader
 };
 
 //Tails
-class GAU_30mm_Tail_SoundShader
+class Autocannon30mmTurret_tailDistant_SoundShader;
+class Autocannon30mmTurret_tailForest_SoundShader;
+class Autocannon30mmTurret_tailHouses_SoundShader;
+class Autocannon30mmTurret_tailMeadows_SoundShader;
+class Autocannon30mmTurret_tailTrees_SoundShader;
+class GAU_30mm_tailDistant_SoundShader: Autocannon30mmTurret_tailDistant_SoundShader
+{
+	range=1800;
+	rangeCurve[]=
+	{
+		{0,0},
+		{10,0},
+		{600,1},
+		{1800,1}
+	};
+};
+class GAU_30mm_tailForest_SoundShader: Autocannon30mmTurret_tailForest_SoundShader
+{
+	range=1800;
+	rangeCurve[]=
+	{
+		{0,0},
+		{10,0},
+		{20,1},
+		{1800,0.3}
+	};
+};
+class GAU_30mm_tailHouses_SoundShader: Autocannon30mmTurret_tailHouses_SoundShader
+{
+	range=1800;
+	rangeCurve[]=
+	{
+		{0,0},
+		{10,0},
+		{20,1},
+		{200,0.5},
+		{800,0.3},
+		{1800,0}
+	};
+};
+class GAU_30mm_tailMeadows_SoundShader: Autocannon30mmTurret_tailMeadows_SoundShader
+{
+	range=1800;
+	rangeCurve[]=
+	{
+		{0,0},
+		{10,0},
+		{20,1},
+		{1700,0.3}
+	};
+};
+class GAU_30mm_tailTrees_SoundShader: Autocannon30mmTurret_tailTrees_SoundShader
+{
+	range=1800;
+	rangeCurve[]=
+	{
+		{0,0},
+		{10,0},
+		{20,1},
+		{1700,0.3}
+	};
+};
+/*class GAU_30mm_Tail_SoundShader
 {
 	samples[]=
 	{
@@ -548,7 +610,7 @@ class GAU_30mm_Tail_SoundShader
 		{1000,0.3},
 		{2000,0}
 	};
-};
+};*/
 class M61_Fire_Tail_SoundShader
 {
 	samples[]=
