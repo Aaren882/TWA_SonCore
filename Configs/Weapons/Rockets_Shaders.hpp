@@ -13,7 +13,7 @@ class DAGR_shot_close_soundshader
 			1
 		}
 	};
-	volume="1";
+	volume=1;
 	range=10;
 	rangeCurve[]=
 	{
@@ -31,15 +31,15 @@ class DAGR_rocketpods_shot_close_distance_soundshader
 			1
 		}
 	};
-	volume="2*camPos";
-	range=500;
+	volume="camPos";
+	range=800;
 	rangeCurve[]=
 	{
 		{0,0},
 		{10,0},
-		{15,1},
-		{400,1},
-		{500,0}
+		{20,1},
+		{300,1},
+		{800,0}
 	};
 };
 class DAGR_shot_medium_distance_soundshader
@@ -52,14 +52,16 @@ class DAGR_shot_medium_distance_soundshader
 			1
 		}
 	};
-	volume="2*camPos";
-	range=1000;
-	rangecurve[]=
+	volume="camPos";
+	range=1500;
+	rangeCurve[]=
 	{
 		{0,0},
-		{400,0},
+		{10,0},
+		{70,0.5},
 		{500,1},
-		{1000,0}
+		{999,1},
+		{1500,0}
 	};
 };
 class DAGR_shot_far_distance_soundshader
@@ -72,17 +74,17 @@ class DAGR_shot_far_distance_soundshader
 			1
 		}
 	};
-	volume="2*camPos";
+	volume="camPos";
 	range=2000;
-	rangecurve[]=
+	rangeCurve[]=
 	{
 		{0,0},
-		{500,0},
+		{999,0},
 		{1000,1},
-		{2000,0}
+		{2000,1}
 	};
 };
-class Hydra_shot_close_soundshader
+class Hydra_shot_close_soundshader: DAGR_shot_close_soundshader
 {
 	samples[]=
 	{
@@ -97,15 +99,9 @@ class Hydra_shot_close_soundshader
 			1
 		}
 	};
-	volume="1";
-	range=10;
-	rangeCurve[]=
-	{
-		{0,1},
-		{10,0}
-	};
+	volume=1;
 };
-class Hydra_rocketpods_shot_close_distance_soundshader
+class Hydra_rocketpods_shot_close_distance_soundshader: DAGR_rocketpods_shot_close_distance_soundshader
 {
 	samples[]=
 	{
@@ -115,18 +111,9 @@ class Hydra_rocketpods_shot_close_distance_soundshader
 			1
 		}
 	};
-	volume="2*camPos";
-	range=500;
-	rangeCurve[]=
-	{
-		{0,0},
-		{10,0},
-		{15,1},
-		{400,1},
-		{500,0}
-	};
+	volume="camPos";
 };
-class Hydra_shot_medium_distance_soundshader
+class Hydra_shot_medium_distance_soundshader: DAGR_shot_medium_distance_soundshader
 {
 	samples[]=
 	{
@@ -136,17 +123,9 @@ class Hydra_shot_medium_distance_soundshader
 			1
 		}
 	};
-	volume="5*camPos";
-	range=1000;
-	rangecurve[]=
-	{
-		{0,0},
-		{400,0},
-		{500,1},
-		{1000,0}
-	};
+	volume="camPos";
 };
-class Hydra_shot_far_distance_soundshader
+class Hydra_shot_far_distance_soundshader: DAGR_shot_far_distance_soundshader
 {
 	samples[]=
 	{
@@ -156,17 +135,9 @@ class Hydra_shot_far_distance_soundshader
 			1
 		}
 	};
-	volume="5*camPos";
-	range=2000;
-	rangecurve[]=
-	{
-		{0,0},
-		{500,0},
-		{1000,1},
-		{2000,0}
-	};
+	volume="camPos";
 };
-class DAR_shot_close_soundshader
+class DAR_shot_close_soundshader: DAGR_shot_close_soundshader
 {
 	samples[]=
 	{
@@ -181,15 +152,9 @@ class DAR_shot_close_soundshader
 			1
 		}
 	};
-	volume="1";
-	range=10;
-	rangeCurve[]=
-	{
-		{0,1},
-		{10,0}
-	};
+	volume=1;
 };
-class DAR_rocketpods_shot_close_distance_soundshader
+class DAR_rocketpods_shot_close_distance_soundshader: DAGR_rocketpods_shot_close_distance_soundshader
 {
 	samples[]=
 	{
@@ -199,18 +164,9 @@ class DAR_rocketpods_shot_close_distance_soundshader
 			1
 		}
 	};
-	volume="2*camPos";
-	range=500;
-	rangeCurve[]=
-	{
-		{0,0},
-		{10,0},
-		{15,1},
-		{400,1},
-		{500,0}
-	};
+	volume="camPos";
 };
-class DAR_shot_medium_distance_soundshader
+class DAR_shot_medium_distance_soundshader: DAGR_shot_medium_distance_soundshader
 {
 	samples[]=
 	{
@@ -220,17 +176,9 @@ class DAR_shot_medium_distance_soundshader
 			1
 		}
 	};
-	volume="5*camPos";
-	range=1000;
-	rangecurve[]=
-	{
-		{0,0},
-		{400,0},
-		{500,1},
-		{1000,0}
-	};
+	volume="camPos";
 };
-class DAR_shot_far_distance_soundshader
+class DAR_shot_far_distance_soundshader: DAGR_shot_far_distance_soundshader
 {
 	samples[]=
 	{
@@ -240,17 +188,9 @@ class DAR_shot_far_distance_soundshader
 			1
 		}
 	};
-	volume="5*camPos";
-	range=2000;
-	rangecurve[]=
-	{
-		{0,0},
-		{500,0},
-		{1000,1},
-		{2000,0}
-	};
+	volume="camPos";
 };
-class Skyfire_shot_close_soundshader
+class Skyfire_shot_close_soundshader: DAGR_shot_close_soundshader
 {
 	samples[]=
 	{
@@ -265,15 +205,9 @@ class Skyfire_shot_close_soundshader
 			1
 		}
 	};
-	volume="10";
-	range=10;
-	rangeCurve[]=
-	{
-		{0,1},
-		{10,0}
-	};
+	volume=1;
 };
-class Skyfire_rocketpods_shot_close_distance_soundshader
+class Skyfire_rocketpods_shot_close_distance_soundshader: DAGR_rocketpods_shot_close_distance_soundshader
 {
 	samples[]=
 	{
@@ -283,18 +217,9 @@ class Skyfire_rocketpods_shot_close_distance_soundshader
 			1
 		}
 	};
-	volume="2*camPos";
-	range=500;
-	rangeCurve[]=
-	{
-		{0,0},
-		{10,0},
-		{15,1},
-		{400,1},
-		{500,0}
-	};
+	volume="camPos";
 };
-class Skyfire_shot_medium_distance_soundshader
+class Skyfire_shot_medium_distance_soundshader: DAGR_shot_medium_distance_soundshader
 {
 	samples[]=
 	{
@@ -304,17 +229,9 @@ class Skyfire_shot_medium_distance_soundshader
 			1
 		}
 	};
-	volume="5*camPos";
-	range=1000;
-	rangecurve[]=
-	{
-		{0,0},
-		{400,0},
-		{500,1},
-		{1000,0}
-	};
+	volume="camPos";
 };
-class Skyfire_shot_far_distance_soundshader
+class Skyfire_shot_far_distance_soundshader: DAGR_shot_far_distance_soundshader
 {
 	samples[]=
 	{
@@ -324,19 +241,11 @@ class Skyfire_shot_far_distance_soundshader
 			1
 		}
 	};
-	volume="5*camPos";
-	range=2000;
-	rangecurve[]=
-	{
-		{0,0},
-		{500,0},
-		{1000,1},
-		{2000,0}
-	};
+	volume="camPos";
 };
 
 //-Missile
-class AMH_shot_close_soundshader
+class AMH_shot_close_soundshader: DAGR_shot_close_soundshader
 {
 	samples[]=
 	{
@@ -351,15 +260,9 @@ class AMH_shot_close_soundshader
 			1
 		}
 	};
-	volume="5";
-	range=10;
-	rangeCurve[]=
-	{
-		{0,1},
-		{10,0}
-	};
+	volume=1;
 };
-class AMH_shot_close_distance_soundshader
+class AMH_shot_close_distance_soundshader: DAGR_rocketpods_shot_close_distance_soundshader
 {
 	samples[]=
 	{
@@ -369,18 +272,9 @@ class AMH_shot_close_distance_soundshader
 			1
 		}
 	};
-	volume="3*camPos";
-	range=500;
-	rangeCurve[]=
-	{
-		{0,0},
-		{10,0},
-		{15,1},
-		{400,1},
-		{500,0}
-	};
+	volume="camPos";
 };
-class AMH_shot_medium_distance_soundshader
+class AMH_shot_medium_distance_soundshader: DAGR_shot_medium_distance_soundshader
 {
 	samples[]=
 	{
@@ -390,17 +284,9 @@ class AMH_shot_medium_distance_soundshader
 			1
 		}
 	};
-	volume="5*camPos";
-	range=1000;
-	rangecurve[]=
-	{
-		{0,0},
-		{400,0},
-		{500,1},
-		{1000,0}
-	};
+	volume="camPos";
 };
-class AMH_shot_far_distance_soundshader
+class AMH_shot_far_distance_soundshader: DAGR_shot_far_distance_soundshader
 {
 	samples[]=
 	{
@@ -410,19 +296,11 @@ class AMH_shot_far_distance_soundshader
 			1
 		}
 	};
-	volume="5*camPos";
-	range=2000;
-	rangecurve[]=
-	{
-		{0,0},
-		{500,0},
-		{1000,1},
-		{2000,0}
-	};
+	volume="camPos";
 };
 
 //-Air Missile Light
-class AML_shot_close_soundshader
+class AML_shot_close_soundshader: DAGR_shot_close_soundshader
 {
 	samples[]=
 	{
@@ -437,15 +315,9 @@ class AML_shot_close_soundshader
 			1
 		}
 	};
-	volume="2";
-	range=10;
-	rangeCurve[]=
-	{
-		{0,1},
-		{10,0}
-	};
+	volume=1;
 };
-class AML_shot_close_distance_soundshader
+class AML_shot_close_distance_soundshader: DAGR_rocketpods_shot_close_distance_soundshader
 {
 	samples[]=
 	{
@@ -455,132 +327,57 @@ class AML_shot_close_distance_soundshader
 			1
 		}
 	};
-	volume="3*camPos";
-	range=500;
-	rangeCurve[]=
-	{
-		{0,0},
-		{10,0},
-		{15,1},
-		{400,1},
-		{500,0}
-	};
+	volume="camPos";
 };
-class AML_shot_medium_distance_soundshader
+class AML_shot_medium_distance_soundshader: AMH_shot_medium_distance_soundshader
 {
-	samples[]=
-	{
-		
-		{
-			"MG8\TWA_SonCore\Snd\Weapons\Missiles\AM_MId",
-			1
-		}
-	};
-	volume="5*camPos";
-	range=1000;
-	rangecurve[]=
-	{
-		{0,0},
-		{400,0},
-		{500,1},
-		{1000,0}
-	};
+	volume="camPos";
 };
-class AML_shot_far_distance_soundshader
+class AML_shot_far_distance_soundshader: AMH_shot_far_distance_soundshader
 {
-	samples[]=
-	{
-		
-		{
-			"MG8\TWA_SonCore\Snd\Weapons\Missiles\AM_far",
-			1
-		}
-	};
-	volume="5*camPos";
-	range=2000;
-	rangecurve[]=
-	{
-		{0,0},
-		{500,0},
-		{1000,1},
-		{2000,0}
-	};
+	volume="camPos";
 };
 
 //-Tail
-class Rocket_Tail_forest_soundshader
+class Static_Launcher_Titan_ATAA_tailForest_SoundShader;
+class Static_Launcher_Titan_ATAA_tailHouses_SoundShader;
+class Static_Launcher_Titan_ATAA_tailMeadows_SoundShader;
+class Rocket_Tail_forest_soundshader: Static_Launcher_Titan_ATAA_tailForest_SoundShader
 {
-	samples[]=
-	{
-		
-		{
-			"MG8\TWA_SonCore\Snd\Weapons\Rockets\Tail\Reflector_Forest_1",
-			1
-		}
-	};
 	volume="(1-interior/1.4)*forest";
 	range=2000;
 	limitation=1;
 	rangeCurve[]=
 	{
-		{0,1},
-		{2000,0.30000001}
+		{0,0},
+		{10,0},
+		{20,1},
+		{2000,0.3}
 	};
 };
-class Rocket_Tail_trees_soundshader
+class Rocket_Tail_houses_soundshader: Static_Launcher_Titan_ATAA_tailHouses_SoundShader
 {
-	samples[]=
-	{
-		
-		{
-			"MG8\TWA_SonCore\Snd\Weapons\Rockets\Tail\Reflector_Forest_1",
-			1
-		}
-	};
-	volume=" ( 1-interior ) * trees";
-	range=2000;
-	limitation=1;
-	rangeCurve[]=
-	{
-		{0,1},
-		{2000,0.30000001}
-	};
-};
-class Rocket_Tail_houses_soundshader
-{
-	samples[]=
-	{
-		
-		{
-			"MG8\TWA_SonCore\Snd\Weapons\Rockets\Tail\Reflector_Houses_1",
-			1
-		}
-	};
 	volume="(1-interior/1.4)*houses";
 	range=2000;
 	limitation=1;
 	rangeCurve[]=
 	{
-		{0,1},
-		{2000,0.30000001}
+		{0,0},
+		{10,0},
+		{20,1},
+		{2000,0.3}
 	};
 };
-class Rocket_Tail_meadow_soundshader
+class Rocket_Tail_meadow_soundshader: Static_Launcher_Titan_ATAA_tailMeadows_SoundShader
 {
-	samples[]=
-	{
-		
-		{
-			"MG8\TWA_SonCore\Snd\Weapons\Rockets\Tail\Reflector_Meadow_1",
-			1
-		}
-	};
 	volume="(1-interior/1.4)*(meadows/2 max sea)";
 	range=2000;
 	limitation=1;
 	rangeCurve[]=
 	{
-		{0,1},
-		{2000,0.30000001}
+		{0,0},
+		{10,0},
+		{20,1},
+		{2000,0.3}
 	};
 };

@@ -28,14 +28,14 @@ class GAU_30mm_APCH_shot_3rd_soundshader
 		}
 	};
 	volume="CamPos";
-	range=500;
+	range=800;
 	rangeCurve[]=
 	{
 		{0,0},
 		{10,0},
 		{20,1},
-		{499,1},
-		{500,0}
+		{300,1},
+		{800,0}
 	};
 };
 class GAU_30mm_APCH_shot_close_distance_soundshader

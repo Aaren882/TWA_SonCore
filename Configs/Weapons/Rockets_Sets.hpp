@@ -7,12 +7,13 @@ class DAR_weapon_shot_soundset
 		"DAR_shot_medium_distance_soundshader",
 		"DAR_shot_far_distance_soundshader"
 	};
-	volumeFactor=1;
+	volumeFactor=1.4;
 	volumecurve="Rockets_Fire_Weapons_volumecurve";
 	sound3dprocessingtype="VFX_weapons_tails_3dprocessor";
 	distancefilter="Rockets_Fire_weapons_lowpass_filter";
 	occlusionFactor=0.25;
 	obstructionFactor=0.3;
+	occlusionObstruction = 1;
 	spatial=1;
 	doppler=0;
 	loop=0;
@@ -71,16 +72,6 @@ class AML_weapon_shot_soundset: DAR_weapon_shot_soundset
 		"AML_shot_far_distance_soundshader"
 	};
 };
-class HellFire_weapon_shot_soundset: DAR_weapon_shot_soundset
-{
-	SoundShaders[]=
-	{
-		"AML_shot_close_soundshader",
-		"HellFire_shot_close_distance_soundshader",
-		"AML_shot_medium_distance_soundshader",
-		"AML_shot_far_distance_soundshader"
-	};
-};
 
 class Rocket_Tail_soundset: DAR_weapon_shot_soundset
 {
@@ -88,12 +79,12 @@ class Rocket_Tail_soundset: DAR_weapon_shot_soundset
 	{
 		"Rocket_Tail_forest_soundshader",
 		"Rocket_Tail_houses_soundshader",
-		"Rocket_Tail_meadow_soundshader",
-		"Rocket_Tail_trees_soundshader"
+		"Rocket_Tail_meadow_soundshader"
 	};
-	volumeFactor=0.5;
+	volumeFactor=1;
 	volumecurve="VFX_wpn_vl_sin";
-	frequencyrandomizer=2;
+	frequencyrandomizer=0.5;
 	distancefilter="VFX_wpn_echo_lp_dia";
+	sound3DProcessingType="ExplosionMediumTail3DProcessingType";
 	soundShadersLimit=2;
 };

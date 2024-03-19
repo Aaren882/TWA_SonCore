@@ -306,15 +306,15 @@ class CfgSoundCurves
 		points[]=
 		{
 			{0,1},
-			{0.1,0.75},
-			{0.2,0.5},
-			{0.3,0.2},
-			{0.4,0.1},
-			{0.5,0.05},
-			{0.6,0.01},
-			{0.7,0.0075},
-			{0.8,0.0025},
-			{0.9,0.001},
+			{0.1,0.95},
+			{0.2,0.89},
+			{0.3,0.755},
+			{0.4,0.65},
+			{0.5,0.435},
+			{0.6,0.254},
+			{0.7,0.125},
+			{0.8,0.082},
+			{0.9,0.0153},
 			{1,0}
 		};
 	};
@@ -324,14 +324,14 @@ class CfgSoundCurves
 		{
 			{0,1},
 			{0.1,0.5},
-			{0.2,0.3},
-			{0.3,0.25},
-			{0.4,0.2},
-			{0.5,0.175},
-			{0.6,0.15},
-			{0.7,0.125},
-			{0.8,0.1},
-			{0.9,0.05},
+			{0.2,0.35},
+			{0.3,0.232},
+			{0.4,0.122},
+			{0.5,0.11},
+			{0.6,0.095},
+			{0.7,0.056},
+			{0.8,0.015},
+			{0.9,0.01},
 			{1,0}
 		};
 	};
@@ -483,14 +483,14 @@ class CfgSound3DProcessors
 	class Rockets_Fire_weapons_3dprocessor
 	{
 		type="panner";
-		innerrange=1;
-		range=100;
+		innerrange=5;
+		range=300;
 		rangecurve="VFX_weapons_processorcurve";
 	};
 	class VFX_weapons_tails_3dprocessor
 	{
 		type="panner";
-		innerrange=0;
+		innerrange=5;
 		range=100;
 		rangecurve="VFX_basic_processorcurve";
 	};
@@ -656,20 +656,20 @@ class cfgDistanceFilters
 	class Rockets_Fire_weapons_lowpass_filter
 	{
 		type="lowpassfilter";
-		mincutofffrequency=1000;
+		mincutofffrequency=100;
 		qfactor=1;
-		innerrange=40;
-		range=1000;
-		powerfactor=55;
+		innerrange=150;
+		range=2500;
+		powerfactor=30;
 	};
 	class VFX_wpn_echo_lp_dia
 	{
 		type="lowpassfilter";
-		mincutofffrequency=2500;
-		qfactor=1;
+		mincutofffrequency=300;
+		qfactor=0.8;
 		innerrange=30;
-		range=300;
-		powerfactor=75;
+		range=2500;
+		powerfactor=20;
 	};
 	
 	//GunShip
