@@ -144,6 +144,7 @@ class GAU_30mm_APCH_weapon_shot_tail_SoundSet: Autocannon30mmTurret_tail_SoundSe
 	//volumeFactor=0.75;
 	frequencyRandomizerMin=0.2;
 	volumeCurve="HeliFX_CannonShotTailCurve";
+	sound3DProcessingType="ExplosionMediumTail3DProcessingType";
 };
 
 //25mm

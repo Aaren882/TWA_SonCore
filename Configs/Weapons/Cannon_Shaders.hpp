@@ -71,13 +71,13 @@ class GAU_30mm_APCH_shot_far_distance_soundshader
 		}
 	};
 	volume="camPos";
-	range=1800;
+	range=2000;
 	rangeCurve[]=
 	{
 		{0,0},
 		{999,0},
 		{1000,1},
-		{1800,1}
+		{2000,1}
 	};
 };
 
@@ -536,29 +536,29 @@ class Autocannon30mmTurret_tailMeadows_SoundShader;
 class Autocannon30mmTurret_tailTrees_SoundShader;
 class GAU_30mm_tailDistant_SoundShader: Autocannon30mmTurret_tailDistant_SoundShader
 {
-	range=1800;
+	range=2000;
 	rangeCurve[]=
 	{
 		{0,0},
 		{10,0},
 		{600,1},
-		{1800,1}
+		{2000,1}
 	};
 };
 class GAU_30mm_tailForest_SoundShader: Autocannon30mmTurret_tailForest_SoundShader
 {
-	range=1800;
+	range=2000;
 	rangeCurve[]=
 	{
 		{0,0},
 		{10,0},
 		{20,1},
-		{1800,0.3}
+		{2000,0.3}
 	};
 };
 class GAU_30mm_tailHouses_SoundShader: Autocannon30mmTurret_tailHouses_SoundShader
 {
-	range=1800;
+	range=2000;
 	rangeCurve[]=
 	{
 		{0,0},
@@ -566,29 +566,29 @@ class GAU_30mm_tailHouses_SoundShader: Autocannon30mmTurret_tailHouses_SoundShad
 		{20,1},
 		{200,0.5},
 		{800,0.3},
-		{1800,0}
+		{2000,0}
 	};
 };
 class GAU_30mm_tailMeadows_SoundShader: Autocannon30mmTurret_tailMeadows_SoundShader
 {
-	range=1800;
+	range=2000;
 	rangeCurve[]=
 	{
 		{0,0},
 		{10,0},
 		{20,1},
-		{1700,0.3}
+		{2000,0.3}
 	};
 };
 class GAU_30mm_tailTrees_SoundShader: Autocannon30mmTurret_tailTrees_SoundShader
 {
-	range=1800;
+	range=2000;
 	rangeCurve[]=
 	{
 		{0,0},
 		{10,0},
 		{20,1},
-		{1700,0.3}
+		{2000,0.3}
 	};
 };
 /*class GAU_30mm_Tail_SoundShader

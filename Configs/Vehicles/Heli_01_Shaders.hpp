@@ -11,14 +11,14 @@ class Heli_01_TR_Rotor_Distance_SoundShader
 	};
 	frequency="rotorspeed * (1-rotorthrust/15) * 1";
 	volume="(CustomSoundController14+1)*camext*(0 max (rotorspeed-0.1))*(1 + rotorthrust)";
-	range=1500;
+	range=2200;
 	rangecurve[]=
 	{
 		{0,0},
 		{100,0},
 		{600,1},
 		{1000,0.15},
-		{1500,0}
+		{2200,0}
 	};
 };
 class Heli_01_TR_Engine_Distance_SoundShader
@@ -33,13 +33,13 @@ class Heli_01_TR_Engine_Distance_SoundShader
 	};
 	frequency="1.25*rotorspeed*(1-rotorthrust/15)";
 	volume="camext*((rotorspeed-0.72)*4)*(CustomSoundController14+1)";
-	range=1300;
+	range=1800;
 	rangecurve[]=
 	{
 		{0,0},
 		{300,1},
 		{1200,0.2},
-		{1300,0}
+		{1800,0}
 	};
 };
 class Heli_01_TR_EngineExt_SoundShader
@@ -54,13 +54,13 @@ class Heli_01_TR_EngineExt_SoundShader
 	};
 	frequency="rotorSpeed*(1+rotorThrust/6)";
 	volume="camext*(rotorSpeed factor [0.3, 1])*(CustomSoundController14+1)";
-	range=1000;
+	range=1300;
 	rangecurve[]=
 	{
 		{0,1},
 		{300,0.8},
 		{800,0.3},
-		{1000,0}
+		{1300,0}
 	};
 };
 class Heli_01_TR_RotorExt_SoundShader: Heli_01_TR_EngineExt_SoundShader
@@ -75,13 +75,13 @@ class Heli_01_TR_RotorExt_SoundShader: Heli_01_TR_EngineExt_SoundShader
 	};
 	frequency="(rotorSpeed factor [0.3, 0.7])*(1 - rotorThrust/10)";
 	volume="camext*(rotorSpeed factor [0.3, 1])*(1 + rotorThrust)*(CustomSoundController14+1)";
-	range=1200;
+	range=1800;
 	rangecurve[]=
 	{
 		{0,0.2},
 		{15,1},
 		{1000,0.4},
-		{1200,0}
+		{1800,0}
 	};
 };
 class Heli_01_TR_Turbine_Ext_SoundShader

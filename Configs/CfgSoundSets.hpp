@@ -394,7 +394,7 @@ class Plane_Fighter_SonicBoom_SoundSet
 		"JetFX_sonicboom_Close_SoundShader",
 		"JetFX_sonicboom_Far_SoundShader"
 	};
-	volumeFactor=4;
+	volumeFactor=1.4;
 	occlusionFactor=0.5;
 	obstructionFactor=0.3;
 	frequencyRandomizer=1;
