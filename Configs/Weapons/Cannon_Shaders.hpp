@@ -27,7 +27,7 @@ class GAU_30mm_APCH_shot_3rd_soundshader
 			1
 		}
 	};
-	volume="CamPos";
+	volume="1.2 * CamPos";
 	range=800;
 	rangeCurve[]=
 	{
@@ -591,7 +591,7 @@ class GAU_30mm_tailTrees_SoundShader: Autocannon30mmTurret_tailTrees_SoundShader
 		{2000,0.3}
 	};
 };
-/*class GAU_30mm_Tail_SoundShader
+class GAU_30mm_Tail_SoundShader
 {
 	samples[]=
 	{
@@ -610,7 +610,7 @@ class GAU_30mm_tailTrees_SoundShader: Autocannon30mmTurret_tailTrees_SoundShader
 		{1000,0.3},
 		{2000,0}
 	};
-};*/
+};
 class M61_Fire_Tail_SoundShader
 {
 	samples[]=

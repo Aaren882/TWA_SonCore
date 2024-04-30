@@ -28,7 +28,7 @@ class HeliGAU_Ext_Base: HeliGAU_Int_Base
 {
 	sound3DProcessingType="Heli_GAU_WeaponShotEcho_3DProcessor";
 	distanceFilter="Heli_GAU_distance_filter";
-	volumeCurve="CannonCloseShotCurve";
+	volumeCurve="HeliFX_CannonShotCurve";
 	spatial=1;
 	doppler=1;
 	occlusionObstruction = 1;
@@ -110,9 +110,9 @@ class GAU_30mm_APCH_shot_Int_SoundSet: HeliGAU_Int_Base
 	{
 		"GAU_30mm_APCH_shot_Int_soundshader"
 	};
-	volumeFactor=5;
-	frequencyRandomizer=0.1;
-	frequencyRandomizerMin=0.2;
+	volumeFactor=8;
+	frequencyRandomizer=0;
+	frequencyRandomizerMin=0.1;
 };
 class GAU_30mm_APCH_weapon_shot_soundset: HeliGAU_Ext_Base
 {
@@ -127,7 +127,7 @@ class GAU_30mm_APCH_weapon_shot_soundset: HeliGAU_Ext_Base
 	distanceFilter="Heavy_distance_filter";
 	volumeCurve="HeliFX_CannonShotCurve";
 	occlusionFactor=0.5;
-	frequencyRandomizer=1.2;
+	frequencyRandomizer=0.5;
 	frequencyRandomizerMin=0.2;
 };
 class Autocannon30mmTurret_tail_SoundSet;
@@ -141,8 +141,8 @@ class GAU_30mm_APCH_weapon_shot_tail_SoundSet: Autocannon30mmTurret_tail_SoundSe
 		"GAU_30mm_tailMeadows_SoundShader",
 		"GAU_30mm_tailTrees_SoundShader"
 	};
-	//volumeFactor=0.75;
-	frequencyRandomizerMin=0.2;
+	volumeFactor=1.5;
+	frequencyRandomizerMin=0.1;
 	volumeCurve="HeliFX_CannonShotTailCurve";
 	sound3DProcessingType="ExplosionMediumTail3DProcessingType";
 };
