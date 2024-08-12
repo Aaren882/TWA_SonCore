@@ -178,13 +178,13 @@ class CfgSoundCurves
 			{0,1},
 			{0.1,0.93},
 			{0.2,0.7},
-			{0.3,0.5},
-			{0.4,0.2},
-			{0.5,0.1},
-			{0.6,0.08},
-			{0.7,0.058},
-			{0.8,0.02},
-			{0.9,0.01},
+			{0.3,0.64},
+			{0.4,0.5221},
+			{0.5,0.382},
+			{0.6,0.215},
+			{0.7,0.123},
+			{0.8,0.067},
+			{0.9,0.022},
 			{1,0}
 		};
 	};
@@ -405,7 +405,7 @@ class CfgSound3DProcessors
 	class JetFX_Forsage_Close_3DProcessingType: JetFX_Close_3DProcessingType
 	{
 		innerRange=0;
-		range=800;
+		range=500;
 	};
 	
 	//Heli
