@@ -35,7 +35,7 @@ class Gau8_Fire_Base_SoundSet
 	sound3DProcessingType="A10_HeavyGAU_WeaponShotEcho_3DProcessor";
 	distanceFilter="A10_HeavyGAU_distance_filter";
 	
-	volumeFactor=2;
+	volumeFactor=3;
 };
 	
 class Gau8_Fire_Lo_SoundSet: Gau8_Fire_Base_SoundSet
@@ -111,7 +111,7 @@ class Gau8_tail_SoundSet: Gau8_Fire_Base_SoundSet
 		"Gau8_tailMeadows_SoundShader",
 		"Gau8_tailTrees_SoundShader"
 	};
-	volumeFactor=1;
+	volumeFactor=3;
 	volumeCurve="VFX_HeavyCannonTail_Curve";
 	occlusionFactor=0.3;
 	frequencyRandomizerMin=0.1;
